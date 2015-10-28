@@ -1,0 +1,20 @@
+{
+  "name": "sugoi-converter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakatashi/sugoi-converter.git"
+  },
+  "author": "Koki Takahashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakatashi/sugoi-converter/issues"
+  },
+  "homepage": "https://github.com/hakatashi/sugoi-converter#readme"
+}
