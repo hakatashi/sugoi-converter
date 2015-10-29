@@ -16,7 +16,7 @@ gulp.task 'build:js', ->
 	browserify()
 	.add 'index.ts'
 	.add glob.sync 'typings/**/*.d.ts'
-	.plugin tsify
+	.plugin tsify, target: 'ES5'
 	.bundle()
 	.pipe source 'index.js'
 	.pipe gulp.dest '.'
