@@ -20,9 +20,12 @@
   "devDependencies": {
     "browserify": "^12.0.1",
     "coffee-script": "^1.10.0",
+    "glob": "^5.0.15",
     "gulp": "^3.9.0",
     "gulp-jade": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "tsify": "^0.12.2"
+    "jquery": "^2.1.4",
+    "tsify": "^0.12.2",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -1,6 +1,7 @@
 doctype
 -
 	var converters = [
+		'Plain',
 		'Base64',
 		'ROT13',
 		'Binary',
@@ -11,11 +12,12 @@ doctype
 html
 	head
 		title Sugoi Converter
+		script(src='index.js')
 	body
 		h1 Sugoi Converter
 		.converters
 			each converter in converters
 				- var slug = converter.replace(/\W/g, '').toLowerCase();
-				.converter(class=`converter-${slug}`)
+				.converter(class=slug)
 					h2.label= converter
-					textarea
+					textarea.textarea
