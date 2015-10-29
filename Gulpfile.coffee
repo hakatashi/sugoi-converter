@@ -4,7 +4,6 @@ tsify = require 'tsify'
 jade = require 'gulp-jade'
 rename = require 'gulp-rename'
 source = require 'vinyl-source-stream'
-glob = require 'glob'
 
 gulp.task 'build:html', ->
 	gulp.src '*.jade'
@@ -15,7 +14,7 @@ gulp.task 'build:html', ->
 gulp.task 'build:js', ->
 	browserify()
 	.add 'index.ts'
-	.add glob.sync 'typings/**/*.d.ts'
+	.add 'typings/tsd.d.ts'
 	.plugin tsify, target: 'ES5'
 	.bundle()
 	.pipe source 'index.js'
