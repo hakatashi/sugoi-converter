@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp",
+    "install": "tsd install"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "gulp-jade": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "jquery": "^2.1.4",
+    "tsd": "^0.6.5",
     "tsify": "^0.12.2",
     "vinyl-source-stream": "^1.1.0"
   }
