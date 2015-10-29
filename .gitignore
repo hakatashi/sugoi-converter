@@ -27,6 +27,11 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# Built files
+*.html
+*.js
+*.css
+
 # =========================
 # Operating System Files
 # =========================
