@@ -20,4 +20,7 @@ const rotN = (text:string, N:number) => {
 
 const rot13 = (text:string) => rotN(text, 13);
 
-export = rot13;
+export = {
+	encode: rot13,
+	decode: rot13,
+};

@@ -20,4 +20,4 @@ html
 				- var slug = converter.replace(/\W/g, '').toLowerCase();
 				.converter(class=slug)
 					h2.label= converter
-					textarea.textarea
+					textarea.textarea(data-converter=slug)
