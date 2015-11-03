@@ -15,7 +15,9 @@ gulp.task 'build:js', ->
 	browserify()
 	.add 'index.ts'
 	.add 'typings/tsd.d.ts'
-	.plugin tsify, target: 'ES5'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
 	.bundle()
 	.pipe source 'index.js'
 	.pipe gulp.dest '.'
