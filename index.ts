@@ -17,13 +17,31 @@ $(document).ready(() => {
 	});
 
 	for (var id in $forms) {
-		// Enclose `id` into closure... since TypeScript doesn't support
+		// Let enclose `id` into closure... since TypeScript doesn't support
 		// block closure transpilings
 		((id) => {
 			const $form = $forms[id];
 
 			$form.on('keyup keypress keydown change click contextmenu paste', (event) => {
-				console.log(id);
+				const text = $form.val();
+				let plainText;
+
+				if (id === 'plain') {
+					plainText = text;
+				} else {
+					if (!engines[id]) {
+						return;
+					} else {
+						plainText = engines[id].decode(text);
+						$forms['plain'].val(plainText);
+					}
+				}
+
+				for (var targetId in $forms) {
+					if (targetId !== 'plain' && targetId !== id && engines[targetId]) {
+						$forms[targetId].val(engines[targetId].encode(plainText));
+					}
+				}
 			});
 		})(id);
 	}
