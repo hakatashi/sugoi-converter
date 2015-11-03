@@ -1,5 +1,6 @@
 import $ = require('jquery');
 import rot13 = require('./src/rot13');
+import punycode = require('./src/punycode');
 
 interface Engine {
 	decode: (text:string) => string,
@@ -10,6 +11,7 @@ const $forms:{[id:string]:JQuery} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
 engines['rot13'] = rot13;
+engines['punycode'] = punycode;
 
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {
