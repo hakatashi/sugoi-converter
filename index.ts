@@ -1,6 +1,7 @@
 import $ = require('jquery');
 import plain = require('./src/plain');
 import rot13 = require('./src/rot13');
+import base64 = require('./src/base64');
 import punycode = require('./src/punycode');
 
 interface Engine {
@@ -13,6 +14,7 @@ const engines:{[id:string]:Engine} = Object.create(null);
 
 engines['plain'] = plain;
 engines['rot13'] = rot13;
+engines['base64'] = base64;
 engines['punycode'] = punycode;
 
 $(document).ready(() => {
