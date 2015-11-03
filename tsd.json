@@ -1,6 +1,6 @@
 {
   "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
+  "repo": "hakatashi/DefinitelyTyped",
   "ref": "master",
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
@@ -12,7 +12,7 @@
       "commit": "62eedc3121a5e28c50473d2e4a9cefbcb9c3957f"
     },
     "node/node.d.ts": {
-      "commit": "0dd29bf8253536ae24e61c109524e924ea510046"
+      "commit": "2726aa2da4cd3111e071614b07c9e4c11238ca6f"
     }
   }
 }
