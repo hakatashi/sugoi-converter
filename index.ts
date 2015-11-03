@@ -26,7 +26,7 @@ $(document).ready(() => {
 
 			$form.on('keyup keypress keydown change click contextmenu paste', (event) => {
 				const text = $form.val();
-				let plainText:string;
+				let plainText:string, encodedText:string;
 
 				if (id === 'plain') {
 					plainText = text;
@@ -34,14 +34,29 @@ $(document).ready(() => {
 					if (!engines[id]) {
 						return;
 					} else {
-						plainText = engines[id].decode(text);
+						try {
+							plainText = engines[id].decode(text);
+						} catch (error) {
+							$form.siblings('.error').text('Decode Error: ' + error.message);
+							return;
+						}
+
+						$form.siblings('.error').empty();
 						$forms['plain'].val(plainText);
 					}
 				}
 
 				for (var targetId in $forms) {
 					if (targetId !== 'plain' && targetId !== id && engines[targetId]) {
-						$forms[targetId].val(engines[targetId].encode(plainText));
+						try {
+							encodedText = engines[targetId].encode(plainText);
+						} catch (error) {
+							$forms[targetId].siblings('.error').text('Encode Error: ' + error.message);
+							return;
+						}
+
+						$forms[targetId].siblings('.error').empty();
+						$forms[targetId].val(encodedText);
 					}
 				}
 			});
