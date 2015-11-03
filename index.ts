@@ -1,15 +1,17 @@
 import $ = require('jquery');
+import plain = require('./src/plain');
 import rot13 = require('./src/rot13');
 import punycode = require('./src/punycode');
 
 interface Engine {
-	decode: (text:string) => string,
-	encode: (text:string) => string,
+	decode: (text:string) => Buffer,
+	encode: (text:Buffer) => string,
 };
 
 const $forms:{[id:string]:JQuery} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
+engines['plain'] = plain;
 engines['rot13'] = rot13;
 engines['punycode'] = punycode;
 
@@ -26,37 +28,32 @@ $(document).ready(() => {
 
 			$form.on('keyup keypress keydown change click contextmenu paste', (event) => {
 				const text = $form.val();
-				let plainText:string, encodedText:string;
+				let raw:Buffer, encoded:string;
 
-				if (id === 'plain') {
-					plainText = text;
+				if (!engines[id]) {
+					return;
 				} else {
-					if (!engines[id]) {
+					try {
+						raw = engines[id].decode(text);
+					} catch (error) {
+						$form.siblings('.error').text('Decode Error: ' + error.message);
 						return;
-					} else {
-						try {
-							plainText = engines[id].decode(text);
-						} catch (error) {
-							$form.siblings('.error').text('Decode Error: ' + error.message);
-							return;
-						}
-
-						$form.siblings('.error').empty();
-						$forms['plain'].val(plainText);
 					}
+
+					$form.siblings('.error').empty();
 				}
 
 				for (var targetId in $forms) {
-					if (targetId !== 'plain' && targetId !== id && engines[targetId]) {
+					if (targetId !== id && engines[targetId]) {
 						try {
-							encodedText = engines[targetId].encode(plainText);
+							encoded = engines[targetId].encode(raw);
 						} catch (error) {
 							$forms[targetId].siblings('.error').text('Encode Error: ' + error.message);
 							return;
 						}
 
 						$forms[targetId].siblings('.error').empty();
-						$forms[targetId].val(encodedText);
+						$forms[targetId].val(encoded);
 					}
 				}
 			});

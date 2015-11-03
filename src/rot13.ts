@@ -20,5 +20,10 @@ const rotN = (text:string, N:number) => {
 
 const rot13 = (text:string) => rotN(text, 13);
 
-export const encode = rot13;
-export const decode = rot13;
+export const encode = (data:Buffer) => {
+	return rot13(data.toString('utf-8'));
+};
+
+export const decode = (text:string) => {
+	return new Buffer(rot13(text), 'utf-8');
+};

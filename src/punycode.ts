@@ -1,8 +1,9 @@
 import punycode = require('punycode');
 
-export const encode = (text:string) => {
-	return punycode.encode(text);
+export const encode = (data:Buffer) => {
+	return punycode.encode(data.toString('utf-8'));
 };
+
 export const decode = (text:string) => {
-	return punycode.decode(text);
+	return new Buffer(punycode.decode(text), 'utf-8');
 };
