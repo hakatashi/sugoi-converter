@@ -2,6 +2,7 @@ import $ = require('jquery');
 import text = require('./src/text');
 import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
+import unicode = require('./src/unicode');
 import punycode = require('./src/punycode');
 
 interface Engine {
@@ -15,6 +16,7 @@ const engines:{[id:string]:Engine} = Object.create(null);
 engines['text'] = text;
 engines['rot13'] = rot13;
 engines['base64'] = base64;
+engines['unicode'] = unicode;
 engines['punycode'] = punycode;
 
 $(document).ready(() => {
@@ -45,7 +47,7 @@ $(document).ready(() => {
 					$form.siblings('.error').empty();
 				}
 
-				for (var targetId in $forms) {
+				for (let targetId in $forms) {
 					if (targetId !== id && engines[targetId]) {
 						try {
 							encoded = engines[targetId].encode(raw);
