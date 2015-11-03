@@ -1,5 +1,5 @@
 import $ = require('jquery');
-import plain = require('./src/plain');
+import text = require('./src/text');
 import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
 import punycode = require('./src/punycode');
@@ -12,7 +12,7 @@ interface Engine {
 const $forms:{[id:string]:JQuery} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
-engines['plain'] = plain;
+engines['text'] = text;
 engines['rot13'] = rot13;
 engines['base64'] = base64;
 engines['punycode'] = punycode;
