@@ -19,12 +19,12 @@ $(document).ready(() => {
 	for (var id in $forms) {
 		// Let enclose `id` into closure... since TypeScript doesn't support
 		// block closure transpilings
-		((id) => {
+		((id:string) => {
 			const $form = $forms[id];
 
 			$form.on('keyup keypress keydown change click contextmenu paste', (event) => {
 				const text = $form.val();
-				let plainText;
+				let plainText:string;
 
 				if (id === 'plain') {
 					plainText = text;
