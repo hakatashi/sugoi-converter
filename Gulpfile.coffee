@@ -5,11 +5,17 @@ jade = require 'gulp-jade'
 rename = require 'gulp-rename'
 source = require 'vinyl-source-stream'
 
-gulp.task 'build:html', ->
+buildHtml = (locals) ->
 	gulp.src '*.jade'
-	.pipe jade()
+	.pipe jade locals: locals
 	.pipe rename (file) -> file.extname = '.html'
 	.pipe gulp.dest '.'
+
+gulp.task 'build:html', ->
+	buildHtml debug: true
+
+gulp.task 'build:html:release', ->
+	buildHtml debug: false
 
 gulp.task 'build:js', ->
 	browserify()

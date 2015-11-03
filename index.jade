@@ -10,10 +10,18 @@ doctype
 		'Unicode',
 		'punycode',
 	];
+	
+	var js = function (file) {
+		if (debug) {
+			return file + '.js';
+		} else {
+			return file + '.min.js';
+		}
+	}
 html
 	head
 		title Sugoi Converter
-		script(src='index.js')
+		script(src = js('index'))
 	body
 		h1 Sugoi Converter
 		.converters
