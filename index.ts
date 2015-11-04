@@ -1,6 +1,7 @@
 import $ = require('jquery');
 import md5 = require('./src/md5');
 import text = require('./src/text');
+import sha1 = require('./src/sha1');
 import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
 import unicode = require('./src/unicode');
@@ -16,6 +17,7 @@ const engines:{[id:string]:Engine} = Object.create(null);
 
 engines['md5'] = md5;
 engines['text'] = text;
+engines['sha1'] = sha1;
 engines['rot13'] = rot13;
 engines['base64'] = base64;
 engines['unicode'] = unicode;
