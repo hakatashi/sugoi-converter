@@ -1,4 +1,5 @@
 import $ = require('jquery');
+import md5 = require('./src/md5');
 import text = require('./src/text');
 import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
@@ -13,6 +14,7 @@ interface Engine {
 const $forms:{[id:string]:JQuery} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
+engines['md5'] = md5;
 engines['text'] = text;
 engines['rot13'] = rot13;
 engines['base64'] = base64;
