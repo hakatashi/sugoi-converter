@@ -6,6 +6,7 @@ import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
 import unicode = require('./src/unicode');
 import punycode = require('./src/punycode');
+import urlescape = require('./src/urlescape');
 
 interface Engine {
 	decode: (text:string) => Buffer,
@@ -22,6 +23,7 @@ engines['rot13'] = rot13;
 engines['base64'] = base64;
 engines['unicode'] = unicode;
 engines['punycode'] = punycode;
+engines['urlescape'] = urlescape;
 
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {
