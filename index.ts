@@ -1,4 +1,5 @@
 import $ = require('jquery');
+import hex = require('./src/hex');
 import md5 = require('./src/md5');
 import text = require('./src/text');
 import sha1 = require('./src/sha1');
@@ -16,6 +17,7 @@ interface Engine {
 const $forms:{[id:string]:JQuery} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
+engines['hex'] = hex;
 engines['md5'] = md5;
 engines['text'] = text;
 engines['sha1'] = sha1;
