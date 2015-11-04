@@ -3,7 +3,9 @@ browserify = require 'browserify'
 tsify = require 'tsify'
 jade = require 'gulp-jade'
 rename = require 'gulp-rename'
+uglify = require 'gulp-uglify'
 source = require 'vinyl-source-stream'
+buffer = require 'vinyl-buffer'
 
 buildHtml = (locals) ->
 	gulp.src '*.jade'
@@ -17,7 +19,7 @@ gulp.task 'build:html', ->
 gulp.task 'build:html:release', ->
 	buildHtml debug: false
 
-gulp.task 'build:js', ->
+buildJs = ->
 	browserify()
 	.add 'index.ts'
 	.add 'typings/tsd.d.ts'
@@ -26,8 +28,20 @@ gulp.task 'build:js', ->
 		noImplicitAny: true
 	.bundle()
 	.pipe source 'index.js'
+	.pipe buffer()
+
+gulp.task 'build:js', ->
+	buildJs()
+	.pipe gulp.dest '.'
+
+gulp.task 'build:js:release', ->
+	buildJs()
+	.pipe uglify preserveComments: 'license'
+	.pipe rename (file) -> file.extname = '.min.js'
 	.pipe gulp.dest '.'
 
 gulp.task 'build', ['build:html', 'build:js']
+
+gulp.task 'release', ['build:html:release', 'build:js:release']
 
 gulp.task 'default', ['build']
