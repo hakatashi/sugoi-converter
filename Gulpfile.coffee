@@ -2,6 +2,7 @@ gulp = require 'gulp'
 browserify = require 'browserify'
 tsify = require 'tsify'
 jade = require 'gulp-jade'
+less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 source = require 'vinyl-source-stream'
@@ -40,8 +41,14 @@ gulp.task 'build:js:release', ->
 	.pipe rename (file) -> file.extname = '.min.js'
 	.pipe gulp.dest '.'
 
-gulp.task 'build', ['build:html', 'build:js']
+gulp.task 'build:css', ->
+	gulp.src 'index.less'
+	.pipe less()
+	.pipe rename (file) -> file.extname = '.css'
+	.pipe gulp.dest '.'
 
-gulp.task 'release', ['build:html:release', 'build:js:release']
+gulp.task 'build', ['build:html', 'build:js', 'build:css']
+
+gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css']
 
 gulp.task 'default', ['build']
