@@ -5,6 +5,7 @@ jade = require 'gulp-jade'
 less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
+connect = require 'gulp-connect'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 
@@ -16,6 +17,7 @@ buildHtml = (locals) ->
 
 gulp.task 'build:html', ->
 	buildHtml debug: true
+	.pipe connect.reload()
 
 gulp.task 'build:html:release', ->
 	buildHtml debug: false
@@ -34,6 +36,7 @@ buildJs = ->
 gulp.task 'build:js', ->
 	buildJs()
 	.pipe gulp.dest '.'
+	.pipe connect.reload()
 
 gulp.task 'build:js:release', ->
 	buildJs()
@@ -46,9 +49,21 @@ gulp.task 'build:css', ->
 	.pipe less()
 	.pipe rename (file) -> file.extname = '.css'
 	.pipe gulp.dest '.'
+	.pipe connect.reload()
+
+gulp.task 'connect', ->
+	connect.server
+		root: '.'
+		livereload: true
+
+gulp.task 'watch', ->
+	gulp.watch ['*.ts', 'src/*.ts'], ['build:js']
+	gulp.watch '*.less', ['build:css']
+	gulp.watch '*.jade', ['build:html']
+	return
 
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
-
 gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css']
+gulp.task 'serve', ['connect', 'watch']
 
 gulp.task 'default', ['build']
