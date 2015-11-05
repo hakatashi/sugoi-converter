@@ -50,11 +50,11 @@ $(document).ready(() => {
 					try {
 						raw = engines[id].decode(text);
 					} catch (error) {
-						$form.siblings('.error').text('Decode Error: ' + error.message);
+						$form.siblings('.error').text('Decode Error: ' + error.message).show();
 						return;
 					}
 
-					$form.siblings('.error').empty();
+					$form.siblings('.error').empty().hide();
 				}
 
 				for (let targetId in $forms) {
@@ -62,11 +62,11 @@ $(document).ready(() => {
 						try {
 							encoded = engines[targetId].encode(raw);
 						} catch (error) {
-							$forms[targetId].siblings('.error').text('Encode Error: ' + error.message);
+							$forms[targetId].siblings('.error').text('Encode Error: ' + error.message).show();
 							return;
 						}
 
-						$forms[targetId].siblings('.error').empty();
+						$forms[targetId].siblings('.error').empty().hide();
 						$forms[targetId].val(encoded);
 					}
 				}
