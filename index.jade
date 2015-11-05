@@ -29,7 +29,7 @@ html
 		meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
 	body
 		h1 Sugoi Converter
-		.converters.pure-g
+		.converters.pure-g.pure-form
 			each converter in converters
 				- var slug = converter.replace(/\(.+?\)/g, '').replace(/\W/g, '').toLowerCase();
 				.converter.pure-u-1.pure-u-sm-1-3.pure-u-md-1-4.pure-u-lg-1-5.pure-u-xl-1-6(class=slug)

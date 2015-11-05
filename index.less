@@ -6,9 +6,11 @@ html, body {
 	height: 100%;
 	width: 100%;
 
-	overflow: hidden;
-
 	background: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/navy_blue.png);
+}
+
+* {
+	box-sizing: border-box;
 }
 
 @title-height: 60px;
@@ -26,9 +28,23 @@ h1 {
 }
 
 .converter {
+	@label-height: 48px;
+
 	height: 160px;
+	padding: 0 6px 0;
 
 	h2 {
+		margin: 0;
+		height: @label-height;
+
 		color: white;
+		line-height: @label-height;
+	}
+
+	textarea {
+		width: 100%;
+		height: calc(~'100% - @{label-height}');
+
+		font-family: monospace;
 	}
 }
