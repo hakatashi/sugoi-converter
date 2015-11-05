@@ -73,4 +73,6 @@ $(document).ready(() => {
 			});
 		})(id);
 	}
+
+	$forms['text'].text('Let\'s say “Sugoi™!!!!”').change();
 });
