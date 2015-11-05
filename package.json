@@ -28,6 +28,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.2",
     "jquery": "^2.1.4",
+    "less-prefixer": "misak113/LESS-Prefixer",
     "purecss": "^0.6.0",
     "tsd": "^0.6.5",
     "tsify": "^0.12.2",
