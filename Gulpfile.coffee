@@ -6,6 +6,7 @@ less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 connect = require 'gulp-connect'
+minifyCss = require 'gulp-minify-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 
@@ -44,12 +45,21 @@ gulp.task 'build:js:release', ->
 	.pipe rename (file) -> file.extname = '.min.js'
 	.pipe gulp.dest '.'
 
-gulp.task 'build:css', ->
+buildCss = ->
 	gulp.src 'index.less'
 	.pipe less()
 	.pipe rename (file) -> file.extname = '.css'
 	.pipe gulp.dest '.'
+
+gulp.task 'build:css', ->
+	buildCss()
 	.pipe connect.reload()
+
+gulp.task 'build:css:release', ->
+	buildCss()
+	.pipe minifyCss()
+	.pipe rename (file) -> file.extname = '.min.css'
+	.pipe gulp.dest '.'
 
 gulp.task 'connect', ->
 	connect.server
@@ -63,7 +73,7 @@ gulp.task 'watch', ->
 	return
 
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
-gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css']
+gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css:release']
 gulp.task 'serve', ['connect', 'watch']
 
 gulp.task 'default', ['build']

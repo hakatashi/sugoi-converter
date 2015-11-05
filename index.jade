@@ -20,11 +20,20 @@ doctype
 			return file + '.min.js';
 		}
 	}
-html
+	
+	var css = function (file) {
+		if (debug) {
+			return file + '.css';
+		} else {
+			return file + '.min.css';
+		}
+	}
+html(lang = 'en')
 	head
+		meta(charset = 'utf-8')
 		title Sugoi Converter
-		script(src = js('index'))
-		link(rel = 'stylesheet', href = 'index.css')
+		script(src = js('index'), charset = 'utf-8')
+		link(rel = 'stylesheet', href = css('index'))
 		link(rel = 'stylesheet', href = 'https://fonts.googleapis.com/css?family=Ubuntu+Mono|Squada+One')
 		meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
 	body
