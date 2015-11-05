@@ -8,7 +8,6 @@ doctype
 		'ROT13',
 		'MD5',
 		'SHA-1',
-		'UTF-16',
 		'Unicode',
 		'punycode',
 		'URL Escape',
@@ -29,7 +28,10 @@ html
 		link(rel = 'stylesheet', href = 'https://fonts.googleapis.com/css?family=Ubuntu+Mono|Squada+One')
 		meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
 	body
-		h1 Sugoi Converter
+		h1
+			span.title Sugoi Converter
+			= " "
+			small by @hakatashi
 		.converters.pure-g.pure-form
 			each converter in converters
 				- var slug = converter.replace(/\(.+?\)/g, '').replace(/\W/g, '').toLowerCase();

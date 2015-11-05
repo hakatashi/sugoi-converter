@@ -16,15 +16,27 @@ html, body {
 @title-height: 60px;
 
 h1 {
-	height: @title-height;
 	margin: 0;
+	padding-top: 12px;
 
 	text-align: center;
-	line-height: @title-height;
-	color: white;
+	color: lightsalmon;
+	line-height: 0.7em;
+
 	font-family: 'Squada One', cursive;
 	font-weight: normal;
 	font-size: 36pt;
+
+	& > * {
+		white-space: nowrap;
+	}
+
+	small {
+		font-size: 50%;
+		margin: 0 20px;
+		color: sandybrown;
+		white-space: nowrap;
+	}
 }
 
 .converters {
