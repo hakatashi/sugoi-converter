@@ -28,11 +28,12 @@ html
 		link(rel = 'stylesheet', href = 'https://fonts.googleapis.com/css?family=Ubuntu+Mono|Squada+One')
 		meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
 	body
-		a.fork-me(href = 'https://github.com/hakatashi/sugoi-converter', alt = 'Fork me on GitHub', target = '_blank')
+		a.fork-me(href = 'https://github.com/hakatashi/sugoi-converter', target = '_blank')
 		h1
 			span.title Sugoi Converter
 			= " "
-			small by @hakatashi
+			small
+				a(href = 'https://github.com/hakatashi', target = '_blank') by @hakatashi
 		.converters.pure-g.pure-form
 			each converter in converters
 				- var slug = converter.replace(/\(.+?\)/g, '').replace(/\W/g, '').toLowerCase();
