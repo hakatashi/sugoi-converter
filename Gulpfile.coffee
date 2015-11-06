@@ -65,6 +65,7 @@ gulp.task 'connect', ->
 	connect.server
 		root: '.'
 		livereload: true
+		port: 35158
 
 gulp.task 'watch', ->
 	gulp.watch ['*.ts', 'src/*.ts'], ['build:js']
