@@ -33,7 +33,7 @@ describe 'hex', ->
 			.to.throw Error
 
 		it 'throws error when invalid character is supplied', ->
-			expect -> hex.decode 'DEAD NIKU'
+			expect -> hex.decode 'XXXXX'
 			.to.throw Error
 
 			expect -> hex.decode 'ア'
