@@ -29,8 +29,8 @@ describe 'binary', ->
 			.to.satisfy equalityWith [0b01011100, 0b10011000]
 
 		it 'throws error when invalid character is supplied', ->
-			expect -> buffer.decode '010110a0'
+			expect -> binary.decode '010110a0'
 			.to.throw Error
 
-			expect -> buffer.decode 'l0ll0ll0'
+			expect -> binary.decode 'l0ll0ll0'
 			.to.throw Error
