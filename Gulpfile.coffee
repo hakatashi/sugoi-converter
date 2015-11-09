@@ -1,6 +1,7 @@
 gulp = require 'gulp'
 browserify = require 'browserify'
 tsify = require 'tsify'
+mochify = require 'mochify'
 jade = require 'gulp-jade'
 less = require 'gulp-less'
 rename = require 'gulp-rename'
@@ -73,8 +74,30 @@ gulp.task 'watch', ->
 	gulp.watch '*.jade', ['build:html']
 	return
 
+gulp.task 'mochify:phantom', ['build'], ->
+	mochify './test/index.js',
+		reporter: 'spec'
+		extension: '.ts'
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.bundle()
+
+gulp.task 'mochify:node', ['build'], ->
+	mochify './test/index.js',
+		reporter: 'spec'
+		node: true
+		extension: '.ts'
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.bundle()
+
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
 gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css:release']
 gulp.task 'serve', ['connect', 'watch']
+gulp.task 'test', ['mochify:node', 'mochify:phantom']
 
 gulp.task 'default', ['build']
