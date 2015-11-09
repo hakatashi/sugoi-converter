@@ -109,7 +109,7 @@ gulp.task 'mochify:cover', ->
 		target: 'ES5'
 		noImplicitAny: true
 	.plugin istanbul,
-		report: ['text', 'html', 'text-summary', 'lcov']
+		report: ['text', 'text-summary', 'lcov']
 		dir: './coverage'
 	.bundle()
 
