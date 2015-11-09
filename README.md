@@ -2,8 +2,11 @@
 
 [travis-image]: https://travis-ci.org/hakatashi/sugoi-converter.svg?branch=master
 [travis-url]: https://travis-ci.org/hakatashi/sugoi-converter
+[coveralls-image]: https://coveralls.io/repos/hakatashi/sugoi-converter/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/hakatashi/sugoi-converter?branch=master
 
 [![Travis Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 [link]: https://hakatashi.github.io/sugoi-converter/
 
