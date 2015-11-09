@@ -35,6 +35,9 @@ typings
 *.js
 *.css
 
+# Test registry is just a JavaScript, indeed
+!test/index.js
+
 # =========================
 # Operating System Files
 # =========================
