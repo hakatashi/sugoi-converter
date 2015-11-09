@@ -8,12 +8,21 @@ expect = chai.expect
  * @param  {number[]} byteArray
  * @return {function}
 ###
-exports.equalityWith = (byteArray) ->
+exports.equalityWith = (data) ->
 	(buffer) ->
 		expect buffer
 		.to.be.an.instanceof Buffer
 
-		expect Array::slice.call buffer
-		.to.be.eql byteArray
+		if Array.isArray data
+			expect Array::slice.call buffer
+			.to.be.eql data
+		else if data instanceof Buffer
+			expect buffer.compare data
+			.to.be.equal 0
+		else if typeof data is 'string'
+			expect buffer.compare new Buffer data
+			.to.be.equal 0
+		else
+			return false
 
 		return true
