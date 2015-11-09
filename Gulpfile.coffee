@@ -1,7 +1,8 @@
 gulp = require 'gulp'
-browserify = require 'browserify'
 tsify = require 'tsify'
 mochify = require 'mochify'
+coffeeify = require 'coffeeify'
+browserify = require 'browserify'
 jade = require 'gulp-jade'
 less = require 'gulp-less'
 rename = require 'gulp-rename'
@@ -77,7 +78,8 @@ gulp.task 'watch', ->
 gulp.task 'mochify:phantom', ['build'], ->
 	mochify './test/index.js',
 		reporter: 'spec'
-		extension: '.ts'
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
 	.add 'typings/tsd.d.ts'
 	.plugin tsify,
 		target: 'ES5'
@@ -88,7 +90,8 @@ gulp.task 'mochify:node', ['build'], ->
 	mochify './test/index.js',
 		reporter: 'spec'
 		node: true
-		extension: '.ts'
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
 	.add 'typings/tsd.d.ts'
 	.plugin tsify,
 		target: 'ES5'
@@ -100,4 +103,4 @@ gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css:relea
 gulp.task 'serve', ['connect', 'watch']
 gulp.task 'test', ['mochify:node', 'mochify:phantom']
 
-gulp.task 'default', ['build']
+gulp.task 'default', ['test']
