@@ -48,3 +48,4 @@ This project uses various new technologies for my JavaScript study. Here is the 
 * [Mochify](https://www.npmjs.com/package/mochify)
     - [Mocha](http://mochajs.org/)
     - [Chai](http://chaijs.com/)
+* [Istanbul](https://github.com/gotwarlost/istanbul)
