@@ -5,5 +5,8 @@ node_js:
   - 'node'
 install: npm install
 script: npm test
+after_success:
+  - gulp mochify:cover
+  - cat coverage/lcov.info | coveralls
 notifications:
   webhooks: http://webhook.hakatashi.com/travis

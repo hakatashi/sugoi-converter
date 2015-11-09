@@ -11,6 +11,7 @@ connect = require 'gulp-connect'
 minifyCss = require 'gulp-minify-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
+istanbul = require 'mochify-istanbul'
 
 buildHtml = (locals) ->
 	gulp.src '*.jade'
@@ -96,6 +97,20 @@ gulp.task 'mochify:node', ['build'], ->
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
+	.bundle()
+
+gulp.task 'mochify:cover', ->
+	mochify './test/index.js',
+		node: true
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.plugin istanbul,
+		report: ['text', 'html', 'text-summary', 'lcov']
+		dir: './coverage'
 	.bundle()
 
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
