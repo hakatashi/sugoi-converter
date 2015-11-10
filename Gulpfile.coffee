@@ -1,3 +1,4 @@
+pkg = require './package.json'
 gulp = require 'gulp'
 tsify = require 'tsify'
 mochify = require 'mochify'
@@ -14,6 +15,8 @@ buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
 
 buildHtml = (locals) ->
+	locals.pkg = pkg
+
 	gulp.src '*.jade'
 	.pipe jade locals: locals
 	.pipe rename (file) -> file.extname = '.html'

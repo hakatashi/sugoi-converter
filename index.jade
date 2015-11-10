@@ -42,7 +42,9 @@ html(lang = 'en')
 		h1
 			span.title Sugoi Converter
 			= " "
-			small
+			small.version= pkg.version
+			= " "
+			small.author
 				a(href = 'https://github.com/hakatashi', target = '_blank') by @hakatashi
 		.converters.pure-g.pure-form
 			each converter in converters
