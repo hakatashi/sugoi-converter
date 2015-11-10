@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Exit when errored
+set -ev
+
 if test "$TRAVIS_SECURE_ENV_VARS" = "true" && test "$TRAVIS_NODE_VERSION" = "node"; then
 
 	NPM_BIN=`npm bin`
