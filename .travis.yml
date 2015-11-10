@@ -1,8 +1,15 @@
 language: node_js
 node_js:
   - '0.12'
-  - '5'
+  - '4'
+  - 'node'
 install: npm install
+before_script:
+  - chmod a+x bin/*
 script: npm test
+after_success:
+  - gulp mochify:cover
+  - cat coverage/lcov.info | coveralls
+  - ./bin/deploy.sh
 notifications:
   webhooks: http://webhook.hakatashi.com/travis

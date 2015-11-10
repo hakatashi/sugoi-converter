@@ -14,13 +14,17 @@ export const encode = (data:Buffer) => {
 export const decode = (text:string) => {
 	let bytes:number[] = [];
 
+	// Remove white spaces
+	text = text.replace(/\s/g, '');
+
+	const match = text.match(/[^01]/);
+	if (match) {
+		throw new Error(`Invalid character: ${match[0]}`);
+	}
+
 	for (let ptr = 0; ptr < text.length; ptr += 8) {
 		const octet = (text.substr(ptr, 8) + '00000000').slice(0, 8);
 		const byte = parseInt(octet, 2);
-
-		if (Number.isNaN(byte)) {
-			throw new Error(`Invalid octet: ${octet}`);
-		}
 
 		bytes.push(byte);
 	}

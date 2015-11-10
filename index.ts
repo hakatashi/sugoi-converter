@@ -9,6 +9,7 @@ import binary = require('./src/binary');
 import unicode = require('./src/unicode');
 import punycode = require('./src/punycode');
 import urlescape = require('./src/urlescape');
+import sclipting = require('./src/sclipting');
 
 interface Engine {
 	decode: (text:string) => Buffer,
@@ -28,6 +29,7 @@ engines['binary'] = binary;
 engines['unicode'] = unicode;
 engines['punycode'] = punycode;
 engines['urlescape'] = urlescape;
+engines['sclipting'] = sclipting;
 
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {

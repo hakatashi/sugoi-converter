@@ -1,6 +1,8 @@
 gulp = require 'gulp'
-browserify = require 'browserify'
 tsify = require 'tsify'
+mochify = require 'mochify'
+coffeeify = require 'coffeeify'
+browserify = require 'browserify'
 jade = require 'gulp-jade'
 less = require 'gulp-less'
 rename = require 'gulp-rename'
@@ -9,6 +11,7 @@ connect = require 'gulp-connect'
 minifyCss = require 'gulp-minify-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
+istanbul = require 'mochify-istanbul'
 
 buildHtml = (locals) ->
 	gulp.src '*.jade'
@@ -65,6 +68,7 @@ gulp.task 'connect', ->
 	connect.server
 		root: '.'
 		livereload: true
+		port: 35158
 
 gulp.task 'watch', ->
 	gulp.watch ['*.ts', 'src/*.ts'], ['build:js']
@@ -72,8 +76,46 @@ gulp.task 'watch', ->
 	gulp.watch '*.jade', ['build:html']
 	return
 
+gulp.task 'mochify:phantom', ->
+	mochify './test/index.js',
+		reporter: 'spec'
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.bundle()
+
+gulp.task 'mochify:node', ->
+	mochify './test/index.js',
+		reporter: 'spec'
+		node: true
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.bundle()
+
+gulp.task 'mochify:cover', ->
+	mochify './test/index.js',
+		node: true
+		extension: ['.ts', '.coffee']
+		transform: ['coffeeify']
+	.add 'typings/tsd.d.ts'
+	.plugin tsify,
+		target: 'ES5'
+		noImplicitAny: true
+	.plugin istanbul,
+		report: ['text', 'text-summary', 'lcov']
+		dir: './coverage'
+	.bundle()
+
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
 gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css:release']
 gulp.task 'serve', ['connect', 'watch']
+gulp.task 'test', ['mochify:node', 'mochify:phantom']
 
-gulp.task 'default', ['build']
+gulp.task 'default', ['test']
