@@ -46,4 +46,4 @@ JS_SIZE=`ls index.min.js -lrt | sumcol 5`
 
 curl -X POST -H "Content-Type: application/json" -k \
 -d "{\"value1\":\"${TRAVIS_BUILD_NUMBER}\",\"value2\":\"${FILE_SIZE}\",\"value3\":\"${JS_SIZE}\"}" \
-"https://maker.ifttt.com/trigger/travis-sugoi-converter/with/key/${IFTTT_TOKEN}"
+"https://maker.ifttt.com/trigger/travis-sugoi-converter/with/key/${IFTTT_TOKEN}" > /dev/null 2>&1
