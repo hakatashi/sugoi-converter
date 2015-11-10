@@ -8,5 +8,6 @@ script: npm test
 after_success:
   - gulp mochify:cover
   - cat coverage/lcov.info | coveralls
+  - bin/deploy.sh
 notifications:
   webhooks: http://webhook.hakatashi.com/travis
