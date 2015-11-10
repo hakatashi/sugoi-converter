@@ -1,5 +1,3 @@
-require('core-js');
-
 import $ = require('jquery');
 import hex = require('./src/hex');
 import md5 = require('./src/md5');
