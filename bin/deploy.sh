@@ -35,3 +35,15 @@ git commit -m "Update build"
 
 # Push it all
 git push "https://${GH_TOKEN}@github.com/hakatashi/sugoi-converter.git" gh-pages:gh-pages > /dev/null 2>&1
+
+sumcol() {
+	awk "{sum+=\$$1} END {print sum}"
+}
+
+# File size report
+FILE_SIZE=`ls {index.html,index.min.js,index.min.css} -lrt | sumcol 5`
+JS_SIZE=`ls index.min.js -lrt | sumcol 5`
+
+curl -X POST -H "Content-Type: application/json" -k \
+-d "{\"value1\":\"${TRAVIS_BUILD_NUMBER}\",\"value2\":\"${FILE_SIZE}\",\"value3\":\"${JS_SIZE}\"}" \
+"https://maker.ifttt.com/trigger/travis-sugoi-converter/with/key/${IFTTT_TOKEN}"
