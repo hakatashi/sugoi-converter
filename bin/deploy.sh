@@ -10,6 +10,7 @@ fi
 NPM_BIN=`npm bin`
 
 # Convert clone to the full clone
+git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 git fetch --unshallow
 
 # Set identification
