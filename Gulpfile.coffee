@@ -76,7 +76,7 @@ gulp.task 'watch', ->
 	gulp.watch '*.jade', ['build:html']
 	return
 
-gulp.task 'mochify:phantom', ['build'], ->
+gulp.task 'mochify:phantom', ->
 	mochify './test/index.js',
 		reporter: 'spec'
 		extension: ['.ts', '.coffee']
@@ -87,7 +87,7 @@ gulp.task 'mochify:phantom', ['build'], ->
 		noImplicitAny: true
 	.bundle()
 
-gulp.task 'mochify:node', ['build'], ->
+gulp.task 'mochify:node', ->
 	mochify './test/index.js',
 		reporter: 'spec'
 		node: true

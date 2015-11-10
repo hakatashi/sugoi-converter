@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gulp",
+    "test": "gulp build && gulp test",
     "install": "tsd install"
   },
   "repository": {
