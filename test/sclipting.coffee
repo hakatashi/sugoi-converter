@@ -15,7 +15,7 @@ describe 'sclipting', ->
 
 			expect sclipting.encode new Buffer [0x2A, 0x2F]
 			.to.be.a 'string'
-			.and.equal '꺢찏'
+			.and.equal '꺢및'
 
 			expect sclipting.encode new Buffer [0x2A, 0x2F, 0x00]
 			.to.be.a 'string'
@@ -34,7 +34,7 @@ describe 'sclipting', ->
 			expect sclipting.decode '가'
 			.to.satisfy equalityWith [0x00]
 
-			expect sclipting.decode '꺢찏'
+			expect sclipting.decode '꺢및'
 			.to.satisfy equalityWith [0x2A, 0x2F]
 
 			expect sclipting.decode '꺢묀'

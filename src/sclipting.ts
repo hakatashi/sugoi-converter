@@ -59,7 +59,7 @@ export const decode = (text:string) => {
 			bytes.push((codePoint - 0xAC00) >> 4);
 			bytes.push((((codePoint - 0xAC00) & 0x0F) << 4) | ((codePoint2 - 0xAC00) >> 8));
 			bytes.push((codePoint2 - 0xAC00) & 0xFF);
-		} else if (0xBC00 <= codePoint2 && codePoint2 < 0xBC0F) {
+		} else if (0xBC00 <= codePoint2 && codePoint2 < 0xBC10) {
 			bytes.push((codePoint - 0xAC00) >> 4);
 			bytes.push((((codePoint - 0xAC00) & 0x0F) << 4) | (codePoint2 - 0xBC00));
 			break;
