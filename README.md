@@ -9,12 +9,15 @@
 [![Coverage Status][coveralls-image]][coveralls-url]
 
 [link]: https://hakatashi.github.io/sugoi-converter/
+[build-history]: https://docs.google.com/spreadsheets/d/1pqdn8BEOKRdc3cx6eYxOdZr5LNwGGINAVg0anHLUBZQ/edit?usp=sharing
 
 For your ease of programming, hacking, CTFing... Say “[Sugoi!](https://en.wiktionary.org/wiki/%E3%81%99%E3%81%94%E3%81%84)”
 
 **[Link][link]**
 
 [![Screenshot](assets/screenshot.png)][link]
+
+[The History of Build Information (such as file size of assets)][build-history]
 
 ## Used Technologies
 

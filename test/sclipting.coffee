@@ -29,6 +29,11 @@ describe 'sclipting', ->
 			.to.be.a 'string'
 			.and.equal '굀뀖걀'
 
+			# https://esolangs.org/wiki/Sclipting#Hello.2C_World.21
+			expect sclipting.encode new Buffer 'Hello, World!', 'ascii'
+			.to.be.a 'string'
+			.and.equal '낆녬닆묬긅덯댦롤긐'
+
 	describe 'sclipting.decode', ->
 		it 'basically works', ->
 			expect sclipting.decode '가'
@@ -45,3 +50,6 @@ describe 'sclipting', ->
 
 			expect sclipting.decode '굀뀖걀'
 			.to.satisfy equalityWith new Buffer 'ДЖ', 'utf16le'
+
+			expect sclipting.decode '낆녬닆묬긅덯댦롤긐'
+			.to.satisfy equalityWith new Buffer 'Hello, World!', 'ascii'
