@@ -1,5 +1,3 @@
-/// <reference path="src/typings.d.ts"/>
-
 require('core-js/fn/object/create');
 
 import $ = require('jquery');

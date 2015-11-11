@@ -33,6 +33,7 @@ buildJs = ->
 	browserify()
 	.add 'index.ts'
 	.add 'typings/tsd.d.ts'
+	.add 'src/typings.d.ts'
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
@@ -85,6 +86,7 @@ gulp.task 'mochify:phantom', ->
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
 	.add 'typings/tsd.d.ts'
+	.add 'src/typings.d.ts'
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
@@ -97,6 +99,7 @@ gulp.task 'mochify:node', ->
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
 	.add 'typings/tsd.d.ts'
+	.add 'src/typings.d.ts'
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
