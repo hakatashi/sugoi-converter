@@ -111,6 +111,7 @@ gulp.task 'mochify:cover', ->
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
 	.add 'typings/tsd.d.ts'
+	.add 'src/typings.d.ts'
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
