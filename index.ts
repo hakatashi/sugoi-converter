@@ -1,3 +1,5 @@
+/// <reference path="src/typings.d.ts"/>
+
 require('core-js/fn/object/create');
 
 import $ = require('jquery');
@@ -9,6 +11,7 @@ import rot13 = require('./src/rot13');
 import base64 = require('./src/base64');
 import binary = require('./src/binary');
 import unicode = require('./src/unicode');
+import ascii85 = require('./src/ascii85');
 import punycode = require('./src/punycode');
 import urlescape = require('./src/urlescape');
 import sclipting = require('./src/sclipting');
@@ -29,6 +32,7 @@ engines['rot13'] = rot13;
 engines['base64'] = base64;
 engines['binary'] = binary;
 engines['unicode'] = unicode;
+engines['ascii85'] = ascii85;
 engines['punycode'] = punycode;
 engines['urlescape'] = urlescape;
 engines['sclipting'] = sclipting;
