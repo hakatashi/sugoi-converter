@@ -1,6 +1,9 @@
 // Spec: http://www.ecma-international.org/ecma-262/6.0/#sec-literals-string-literals
 // Refer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation
 
+// NOTE: This module is not well tested and do not use to real escape works.
+//       It can be sicere security risk.
+
 import punycode = require('punycode');
 import assert = require('assert');
 import {ord, chr, zfill} from './util'
