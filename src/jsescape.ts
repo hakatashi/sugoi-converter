@@ -1,6 +1,9 @@
 // Spec: http://www.ecma-international.org/ecma-262/6.0/#sec-literals-string-literals
 // Refer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation
 
+// NOTE: This module is not well tested and do not use for real escaping/unescaping works.
+//       It can be security risk.
+
 import punycode = require('punycode');
 import assert = require('assert');
 import {ord, chr, zfill} from './util'
@@ -27,7 +30,7 @@ export const encode = (data:Buffer) => {
 
 	for (let codePoint of codePoints) {
 		// UTF-8 is only expressible of code points less than U+10FFFF
-		assert(codePoint <= 0x10FFFF);
+		assert(0 <= codePoint && codePoint <= 0x10FFFF);
 
 		// Escape
 		// Unused escape sequences: \0, \OOO
