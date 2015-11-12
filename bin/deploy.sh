@@ -7,8 +7,6 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ] || [ "$TRAVIS_NODE_VERSION" != "node"
 	exit 0
 fi
 
-NPM_BIN=`npm bin`
-
 # Convert clone to the full clone
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 git fetch --unshallow
@@ -24,14 +22,8 @@ git checkout -- .
 git checkout gh-pages
 git merge -X theirs "$TRAVIS_COMMIT" --no-edit
 
-# Build release files
-$NPM_BIN/gulp release
-
-# Create commit
-git add index.html
-git add index.min.js
-git add index.min.css
-git commit -m "Update build"
+# Update version - build is automatically done by npm
+npm version patch
 
 # Push it all
 git push "https://${GH_TOKEN}@github.com/hakatashi/sugoi-converter.git" gh-pages:gh-pages > /dev/null 2>&1
