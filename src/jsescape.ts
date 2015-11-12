@@ -35,8 +35,6 @@ export const encode = (data:Buffer) => {
 		// Escape
 		// Unused escape sequences: \0, \OOO
 
-		console.log(data.toString('hex'), string, codePoint);
-
 		// Special escape characters
 		if (escapeChars[codePoint] !== undefined) {
 			text += escapeChars[codePoint];

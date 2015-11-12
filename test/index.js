@@ -4,4 +4,5 @@ require('./binary');
 require('./base64');
 require('./ascii85');
 require('./punycode');
+require('./jsescape');
 require('./sclipting');
