@@ -11,6 +11,7 @@ import binary = require('./src/binary');
 import unicode = require('./src/unicode');
 import ascii85 = require('./src/ascii85');
 import punycode = require('./src/punycode');
+import jsescape = require('./src/jsescape');
 import urlescape = require('./src/urlescape');
 import sclipting = require('./src/sclipting');
 
@@ -32,6 +33,7 @@ engines['binary'] = binary;
 engines['unicode'] = unicode;
 engines['ascii85'] = ascii85;
 engines['punycode'] = punycode;
+engines['jsescape'] = jsescape;
 engines['urlescape'] = urlescape;
 engines['sclipting'] = sclipting;
 

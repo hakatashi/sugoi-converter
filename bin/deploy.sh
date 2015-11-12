@@ -22,7 +22,7 @@ git checkout -- .
 
 # Checkout and merge
 git checkout gh-pages
-git merge master --no-edit
+git merge "$TRAVIS_COMMIT" --no-edit
 
 # Build release files
 $NPM_BIN/gulp release
