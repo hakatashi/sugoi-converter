@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp build && gulp test",
-    "install": "tsd install"
+    "install": "tsd install",
+    "version": "gulp release && git add index.html index.min.css index.min.js"
   },
   "repository": {
     "type": "git",
