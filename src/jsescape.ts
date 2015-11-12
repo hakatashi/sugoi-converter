@@ -27,7 +27,7 @@ export const encode = (data:Buffer) => {
 
 	for (let codePoint of codePoints) {
 		// UTF-8 is only expressible of code points less than U+10FFFF
-		assert(codePoint <= 0x10FFFF);
+		assert(0 <= codePoint && codePoint <= 0x10FFFF);
 
 		// Escape
 		// Unused escape sequences: \0, \OOO
