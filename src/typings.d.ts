@@ -20,3 +20,13 @@ declare module "ascii85" {
 	export var ZeroMQ:Ascii85;
 	export var PostScript:Ascii85;
 }
+
+declare module "starts-with" {
+	function startsWith(string: string | string[], prefix: string | string[]): boolean;
+	export = startsWith;
+}
+
+declare module "ends-with" {
+	function endsWith(string: string | string[], prefix: string | string[]): boolean;
+	export = endsWith;
+}
