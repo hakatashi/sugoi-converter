@@ -117,7 +117,6 @@ export const decode = (text:string):Buffer => {
 			if (codePoint > 1114111) {
 				throw new SyntaxError('Unexpected token ILLEGAL');
 			}
-			console.log(codePoint, chr(codePoint), chr(codePoint).codePointAt(0));
 			decoded += chr(codePoint);
 			escapeSequenceMatched = true;
 		}
