@@ -17,5 +17,5 @@ export function zfill (string:string, length:number) {
 	return '0'.repeat(fillLength) + string;
 }
 
-export const startsWith = require('starts-with');
-export const endsWith = require('ends-with');
+//export const startsWith = require('starts-with');
+//export const endsWith = require('ends-with');
