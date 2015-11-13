@@ -67,7 +67,7 @@ export const encode = (data:Buffer) => {
 
 // NOTE: JSON.parse() recongnizes only escaping by '\uXXXX'.
 export const decode = (text:string):Buffer => {
-	const codePoints:number[] = [];
+	let decoded = '';
 	let remnant = text;
 	let match:RegExpMatchArray;
 
@@ -78,7 +78,7 @@ export const decode = (text:string):Buffer => {
 			// Not LineTerminator or backslash
 			['\\', '\x0A', '\x0D', '\u2028', '\u2029'].indexOf(remnant[0]) === -1
 		) {
-			codePoints.push(ord(remnant[0]))
+			decoded += remnant[0]
 			remnant = remnant.slice(1);
 			continue;
 		}
@@ -86,15 +86,57 @@ export const decode = (text:string):Buffer => {
 		// \ EscapeSequence
 		let escapeSequenceMatched = false;
 
-		// CharacterEscapeSequence => SingleEscapeCharacter
+		// CharacterEscapeSequence :: SingleEscapeCharacter
 		if (match = remnant.match(/^(\\['"\\bfnrtv])/)) {
-			codePoints.push(reverseEscapeChars[match[1]]);
-			remnant = remnant.slice(match[1].length);
+			decoded += chr(reverseEscapeChars[match[1]]);
 			escapeSequenceMatched = true;
 		}
+		// CharacterEscapeSequence :: NonEscapeCharacter
+		else if (match = remnant.match(/^\\([^'"\\bfnrtv0-9xu\r\n\u2028\u2029])/)) {
+			decoded += match[1];
+			escapeSequenceMatched = true;
+		}
+		// LegacyOctalEscapeSequence
+		else if (match = remnant.match(/^\\([0-7](?![0-7])|[0-3][0-7](?![0-7])|[4-7][0-7]|[0-3][0-7][0-7])/)) {
+			decoded += chr(parseInt(match[1], 8));
+			escapeSequenceMatched = true;
+		}
+		// HexEscapeSequence
+		else if (match = remnant.match(/^\\x([0-9a-fA-F]{2})/)) {
+			decoded += chr(parseInt(match[1], 16));
+			escapeSequenceMatched = true;
+		}
+		// UnicodeEscapeSequence :: u Hex4Digits
+		else if (match = remnant.match(/^\\u([0-9a-fA-F]{4})/)) {
+			decoded += chr(parseInt(match[1], 16));
+			escapeSequenceMatched = true;
+		}
+		// UnicodeEscapeSequence :: u{ HexDigits }
+		else if (match = remnant.match(/^\\u{([0-9a-fA-F]{1,})}/)) {
+			const codePoint = parseInt(match[1], 16);
+			if (codePoint > 1114111) {
+				throw new SyntaxError('Unexpected token ILLEGAL');
+			}
+			console.log(codePoint, chr(codePoint), chr(codePoint).codePointAt(0));
+			decoded += chr(codePoint);
+			escapeSequenceMatched = true;
+		}
+
+		if (escapeSequenceMatched) {
+			remnant = remnant.slice(match[0].length);
+			continue;
+		}
+
+		// LineContinuation
+		if (match = remnant.match(/^\\(\n|\r(?!\n)|\u2028|\u2029|\r\n)/)) {
+			decoded += match[1];
+			remnant = remnant.slice(match[0].length);
+			continue;
+		}
+
+		// Boo! Not matched.
+		throw new SyntaxError('Unexpected token ILLEGAL');
 	}
 
-	throw new Error('not implemented');
-
-	return new Buffer(0);
+	return new Buffer(decoded, 'utf8');
 };
