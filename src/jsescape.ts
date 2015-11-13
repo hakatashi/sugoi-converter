@@ -6,7 +6,7 @@
 
 import punycode = require('punycode');
 import assert = require('assert');
-import {ord, chr, zfill, startsWith} from './util'
+import {ord, chr, zfill} from './util'
 
 const escapeChars:{[codePoint:number]:string} = Object.create(null);
 
