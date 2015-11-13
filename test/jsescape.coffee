@@ -19,3 +19,33 @@ describe 'jsescape', ->
 		it 'basically works', ->
 			expect jsescape.decode 'bbbBBB\\b\\b\\b\\xbb\\ubbbb\\u{1bbbb}'
 			.to.satisfy equalityWith 'bbbBBB\b\b\b\xbb\ubbbb\ud82e\udfbb'
+
+		it 'recognizes legacy octal escape characters', ->
+			expect jsescape.decode '\\0\\3\\7\\26\\02\\411\\711\\021\\347'
+			.to.satisfy equalityWith '\0\x03\x07\x16\x02\x211\x391\x11\xe7'
+
+		it 'recognize NonEscapeCharacter as it is', ->
+			expect jsescape.decode '\\Q\\y\\o\\あ\\亜'
+			.to.satisfy equalityWith 'Qyoあ亜'
+
+		it 'throws error when invalid escape sequence is supplied', ->
+			expect -> jsescape.decode '\\xZZ'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\xf'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\u10XX'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\u271'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\u{}'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\u{110000}'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode '\\u{EECA008}'
+			.to.throw SyntaxError

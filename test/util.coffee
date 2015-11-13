@@ -17,11 +17,11 @@ exports.equalityWith = (data) ->
 			expect Array::slice.call buffer
 			.to.be.eql data
 		else if data instanceof Buffer
-			expect buffer.compare data
-			.to.be.equal 0
+			expect buffer.toString 'hex'
+			.to.be.equal data.toString 'hex'
 		else if typeof data is 'string'
-			expect buffer.compare new Buffer data
-			.to.be.equal 0
+			expect buffer.toString 'hex'
+			.to.be.equal new Buffer(data).toString 'hex'
 		else
 			return false
 
