@@ -52,3 +52,11 @@ This project uses various new technologies for my JavaScript study. Here is the 
     - [Mocha](http://mochajs.org/)
     - [Chai](http://chaijs.com/)
 * [Istanbul](https://github.com/gotwarlost/istanbul)
+
+## Bug Hunt
+
+These bugs were found along the development of this repository.
+
+* [Is it valid not to throw error in querystring.encode? - nodejs/node](https://github.com/nodejs/node/issues/3702)
+* [Node: Fix punycode.ucs2.decode return type - DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/6587)
+* [Fix fatal error of surrogte pair - feross/buffer](https://github.com/feross/buffer/pull/82)
