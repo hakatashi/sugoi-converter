@@ -26,7 +26,7 @@ git merge -X theirs "$TRAVIS_COMMIT" --no-edit
 npm version patch
 
 # Push it all
-git push "https://${GH_TOKEN}@github.com/hakatashi/sugoi-converter.git" gh-pages:gh-pages > /dev/null 2>&1
+git push "https://${GH_TOKEN}@github.com/hakatashi/sugoi-converter.git" gh-pages:gh-pages --follow-tags > /dev/null 2>&1
 
 sumcol() {
 	awk "{sum+=\$$1} END {print sum}"
