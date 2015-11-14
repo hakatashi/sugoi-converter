@@ -17,8 +17,8 @@ describe 'jsescape', ->
 	describe 'jsescape.decode', ->
 		# Not implemented yet
 		it 'basically works', ->
-			expect jsescape.decode 'bbbBBB\\b\\b\\b\\xbb\\ubbbb\\u{1bbbb}'
-			.to.satisfy equalityWith 'bbbBBB\b\b\b\xbb\ubbbb\ud82e\udfbb'
+			expect jsescape.decode 'bbbBBB\\b\\b\\b\\xbb\\ubbbb\\u{bbbbb}'
+			.to.satisfy equalityWith 'bbbBBB\b\b\b\xbb\ubbbb\udaae\udfbb'
 
 		it 'recognizes legacy octal escape characters', ->
 			expect jsescape.decode '\\0\\3\\7\\26\\02\\411\\711\\021\\347'
