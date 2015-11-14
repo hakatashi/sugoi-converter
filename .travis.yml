@@ -3,6 +3,9 @@ node_js:
   - '0.12'
   - '4'
   - 'node'
+branches:
+  only:
+    - master
 install: npm install
 before_script:
   - chmod a+x bin/*

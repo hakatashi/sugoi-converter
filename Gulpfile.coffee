@@ -37,6 +37,7 @@ buildJs = ->
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
+	.transform 'browserify-shim'
 	.bundle()
 	.pipe source 'index.js'
 	.pipe buffer()
