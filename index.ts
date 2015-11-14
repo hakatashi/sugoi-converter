@@ -1,6 +1,5 @@
 require('core-js/fn/object/create');
 
-import $ = require('jquery');
 import hex = require('./src/hex');
 import md5 = require('./src/md5');
 import text = require('./src/text');
@@ -15,12 +14,15 @@ import jsescape = require('./src/jsescape');
 import urlescape = require('./src/urlescape');
 import sclipting = require('./src/sclipting');
 
+require('zepto');
+require('zepto/event');
+
 interface Engine {
 	decode: (text:string) => Buffer,
 	encode: (text:Buffer) => string,
 };
 
-const $forms:{[id:string]:JQuery} = Object.create(null);
+const $forms:{[id:string]:ZeptoCollection} = Object.create(null);
 const engines:{[id:string]:Engine} = Object.create(null);
 
 engines['hex'] = hex;

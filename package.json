@@ -22,6 +22,7 @@
   "devDependencies": {
     "ascii85": "^0.1.0",
     "browserify": "^12.0.1",
+    "browserify-shim": "^3.8.11",
     "chai": "^3.4.1",
     "coffee-script": "^1.10.0",
     "coffeeify": "^1.1.0",
@@ -35,7 +36,6 @@
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.2",
-    "jquery": "^2.1.4",
     "mocha": "^2.3.3",
     "mochify": "^2.14.0",
     "mochify-istanbul": "^2.3.0",
@@ -44,7 +44,8 @@
     "tsd": "^0.6.5",
     "tsify": "^0.12.2",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "zepto": "github:madrobby/zepto#v1.1.6"
   },
   "coffeelintConfig": {
     "indentation": {
@@ -54,5 +55,13 @@
     "no_tabs": {
       "level": "ignore"
     }
+  },
+  "browser": {
+    "zepto": "./node_modules/zepto/src/zepto.js",
+    "zepto/event": "./node_modules/zepto/src/event.js"
+  },
+  "browserify-shim": {
+    "zepto": "$",
+    "zepto/event": {"depends": ["zepto"]}
   }
 }
