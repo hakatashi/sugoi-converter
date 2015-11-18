@@ -14,6 +14,11 @@ source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
 
+TYPEFILES = [
+	'typings/tsd.d.ts'
+	'lib.d.ts'
+]
+
 buildHtml = (locals) ->
 	locals.pkg = pkg
 
@@ -32,8 +37,7 @@ gulp.task 'build:html:release', ->
 buildJs = ->
 	browserify()
 	.add 'index.ts'
-	.add 'typings/tsd.d.ts'
-	.add 'src/typings.d.ts'
+	.add TYPEFILES
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
@@ -86,8 +90,7 @@ gulp.task 'mochify:phantom', ->
 		reporter: 'spec'
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
-	.add 'typings/tsd.d.ts'
-	.add 'src/typings.d.ts'
+	.add TYPEFILES
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
@@ -99,8 +102,7 @@ gulp.task 'mochify:node', ->
 		node: true
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
-	.add 'typings/tsd.d.ts'
-	.add 'src/typings.d.ts'
+	.add TYPEFILES
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
@@ -111,8 +113,7 @@ gulp.task 'mochify:cover', ->
 		node: true
 		extension: ['.ts', '.coffee']
 		transform: ['coffeeify']
-	.add 'typings/tsd.d.ts'
-	.add 'src/typings.d.ts'
+	.add TYPEFILES
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
