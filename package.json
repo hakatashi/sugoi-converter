@@ -51,6 +51,10 @@
     },
     "no_tabs": {
       "level": "ignore"
+    },
+    "max_line_length": {
+      "level": "warn",
+      "value": 100
     }
   },
   "browser": {
