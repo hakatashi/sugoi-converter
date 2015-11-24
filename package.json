@@ -38,6 +38,7 @@
     "mochify": "^2.14.0",
     "mochify-istanbul": "^2.3.0",
     "purecss": "^0.6.0",
+    "sclipting-escape": "^1.1.2",
     "tsd": "^0.6.5",
     "tsify": "^0.12.2",
     "vinyl-buffer": "^1.0.0",
