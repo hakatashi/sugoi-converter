@@ -1,5 +1,6 @@
 require('./hex');
 require('./md5');
+require('./rot13');
 require('./binary');
 require('./base64');
 require('./ascii85');
