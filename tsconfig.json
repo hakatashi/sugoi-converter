@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "**/*.ts",
+        "**/*.tsx",
+        "!node_modules/**"
+    ],
+    "files": [
+        "index.ts",
+        "lib.d.ts",
+        "src/ascii85.ts",
+        "src/base64.ts",
+        "src/binary.ts",
+        "src/hex.ts",
+        "src/jsescape.ts",
+        "src/md5.ts",
+        "src/punycode.ts",
+        "src/rot13.ts",
+        "src/rot47.ts",
+        "src/sclipting.ts",
+        "src/sha1.ts",
+        "src/text.ts",
+        "src/unicode.ts",
+        "src/urlescape.ts",
+        "src/util.ts",
+        "typings/assertion-error/assertion-error.d.ts",
+        "typings/chai/chai.d.ts",
+        "typings/es6-shim/es6-shim.d.ts",
+        "typings/mocha/mocha.d.ts",
+        "typings/node/node.d.ts",
+        "typings/tsd.d.ts",
+        "typings/zepto/zepto.d.ts"
+    ]
+}
