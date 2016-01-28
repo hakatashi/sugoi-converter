@@ -23,7 +23,7 @@
     "ascii85": "^0.1.0",
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.11",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "coffee-script": "^1.10.0",
     "coffeeify": "^2.0.1",
     "core-js": "^2.0.0",
