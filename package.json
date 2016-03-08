@@ -40,7 +40,7 @@
     "purecss": "~0.6.0",
     "sclipting-escape": "~1.1.2",
     "tsd": "~0.6.5",
-    "tsify": "~0.13.1",
+    "tsify": "~0.14.0",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
     "zepto": "github:madrobby/zepto#v1.1.6"
