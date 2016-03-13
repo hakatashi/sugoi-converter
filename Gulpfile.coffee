@@ -9,7 +9,7 @@ less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
 connect = require 'gulp-connect'
-minifyCss = require 'gulp-minify-css'
+cleanCss = require 'gulp-clean-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
@@ -69,7 +69,7 @@ gulp.task 'build:css', ->
 
 gulp.task 'build:css:release', ->
 	buildCss()
-	.pipe minifyCss()
+	.pipe cleanCss()
 	.pipe rename (file) -> file.extname = '.min.css'
 	.pipe gulp.dest '.'
 
