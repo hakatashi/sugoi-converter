@@ -30,3 +30,17 @@ declare module "ends-with" {
 	function endsWith(string: string | string[], prefix: string | string[]): boolean;
 	export = endsWith;
 }
+
+declare module "html-entities" {
+	class Entities {
+		encode(string: string): string;
+		encodeNonUTF(string: string): string;
+		encodeNonASCII(string: string): string;
+		decode(string: string): string;
+	}
+
+	export class XmlEntities extends Entities {}
+	export class Html4Entities extends Entities {}
+	export class Html5Entities extends Entities {}
+	export class AllHtmlEntities extends Entities {}
+}
