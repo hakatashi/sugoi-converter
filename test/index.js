@@ -9,3 +9,4 @@ require('./ascii85');
 require('./punycode');
 require('./jsescape');
 require('./sclipting');
+require('./htmlescape');
