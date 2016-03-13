@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp build && gulp test",
-    "install": "tsd install",
+    "install": "typings install",
     "version": "gulp release && git add index.html index.min.css index.min.js"
   },
   "repository": {
@@ -40,8 +40,8 @@
     "mochify-istanbul": "~2.3.0",
     "purecss": "~0.6.0",
     "sclipting-escape": "~1.1.2",
-    "tsd": "~0.6.5",
-    "tsify": "~0.14.1",
+    "tsify": "~0.14.0",
+    "typings": "^0.7.8",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
     "zepto": "github:madrobby/zepto#v1.1.6"

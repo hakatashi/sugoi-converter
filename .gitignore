@@ -27,7 +27,7 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-# tsd-complied typings directory
+# typings-complied typings directory
 typings
 
 # Built files

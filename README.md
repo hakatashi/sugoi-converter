@@ -27,7 +27,7 @@ This project uses various new technologies for my JavaScript study. Here is the 
 
 * [CoffeeScript](http://coffeescript.org/)
 * [TypeScript](http://www.typescriptlang.org/)
-    - [TSD](http://definitelytyped.org/tsd/)
+    - ~~[TSD](http://definitelytyped.org/tsd/)~~ → Upgraded to [Typings](https://github.com/typings/typings)
 * [core-js](https://github.com/zloirock/core-js) - ported from [Babel](https://babeljs.io/)
 * [jQuery](https://jquery.com/)
 
