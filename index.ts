@@ -14,6 +14,7 @@ import punycode = require('./src/punycode');
 import jsescape = require('./src/jsescape');
 import urlescape = require('./src/urlescape');
 import sclipting = require('./src/sclipting');
+import htmlescape = require('./src/htmlescape');
 
 require('zepto');
 require('zepto/event');
@@ -40,6 +41,7 @@ engines['punycode'] = punycode;
 engines['jsescape'] = jsescape;
 engines['urlescape'] = urlescape;
 engines['sclipting'] = sclipting;
+engines['htmlescape'] = htmlescape;
 
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {

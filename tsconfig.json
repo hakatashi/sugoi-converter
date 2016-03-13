@@ -26,6 +26,7 @@
         "src/base64.ts",
         "src/binary.ts",
         "src/hex.ts",
+        "src/htmlescape.ts",
         "src/jsescape.ts",
         "src/md5.ts",
         "src/punycode.ts",
