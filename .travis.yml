@@ -6,10 +6,7 @@ node_js:
 branches:
   only:
     - master
-install:
-  - npm install
-  - npm update --depth Infinity
-  - npm update --depth Infinity --dev
+install: npm install
 before_script:
   - chmod a+x bin/*
 script: npm test
@@ -19,6 +16,3 @@ after_success:
   - ./bin/deploy.sh
 notifications:
   webhooks: http://webhook.hakatashi.com/travis
-cache:
-  directories:
-    - node_modules
