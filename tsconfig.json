@@ -38,6 +38,7 @@
         "src/unicode.ts",
         "src/urlescape.ts",
         "src/util.ts",
+        "src/uuencode.ts",
         "typings/browser.d.ts",
         "typings/browser/ambient/assertion-error/index.d.ts",
         "typings/browser/ambient/chai/index.d.ts",
