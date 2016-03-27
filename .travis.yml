@@ -6,7 +6,10 @@ node_js:
 branches:
   only:
     - master
-install: npm install
+install:
+  - npm install
+  - npm update --depth Infinity
+  - npm update --depth Infinity --dev
 before_script:
   - chmod a+x bin/*
 script: npm test
