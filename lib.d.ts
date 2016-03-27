@@ -44,3 +44,8 @@ declare module "html-entities" {
 	export class Html5Entities extends Entities {}
 	export class AllHtmlEntities extends Entities {}
 }
+
+declare module "uuencode" {
+	export function encode(data: string | Buffer): string;
+	export function decode(text: string | Buffer): Buffer;
+}
