@@ -16,3 +16,6 @@ after_success:
   - ./bin/deploy.sh
 notifications:
   webhooks: http://webhook.hakatashi.com/travis
+cache:
+  directories:
+    - node_modules
