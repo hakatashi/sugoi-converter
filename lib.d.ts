@@ -45,7 +45,7 @@ declare module "html-entities" {
 	export class AllHtmlEntities extends Entities {}
 }
 
-declare module "uuencode" {
+declare module "@hakatashi/uuencode" {
 	export function encode(data: string | Buffer): string;
 	export function decode(text: string | Buffer): Buffer;
 }

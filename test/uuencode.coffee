@@ -10,10 +10,10 @@ describe 'uuencode', ->
 		it 'basically works', ->
 			# https://en.wikipedia.org/wiki/Uuencoding#Formatting_mechanism
 			expect uuencode.encode new Buffer 'Cat', 'ascii'
-			.and.equal '#0V%T\n'
+			.to.equal '#0V%T\n'
 
 	describe 'uuencode.decode', ->
 		it 'basically works', ->
 			# https://en.wikipedia.org/wiki/Uuencoding#Formatting_mechanism
 			expect uuencode.decode '#0V%T\n'
-			.to.satisfy equalityWith 'Cat'
+			.to.satisfy equalityWith new Buffer 'Cat', 'ascii'

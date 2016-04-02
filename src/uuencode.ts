@@ -1,4 +1,4 @@
-import uuencode = require('uuencode');
+import uuencode = require('@hakatashi/uuencode');
 
 export const encode = (data:Buffer) => {
 	return uuencode.encode(data);
