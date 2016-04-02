@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/hakatashi/sugoi-converter#readme",
   "devDependencies": {
+    "@hakatashi/uuencode": "0.0.4",
     "ascii85": "~0.1.0",
     "browserify": "~13.0.0",
     "browserify-shim": "~3.8.11",
@@ -42,7 +43,6 @@
     "sclipting-escape": "~1.1.2",
     "tsify": "~0.14.0",
     "typings": "^0.7.8",
-    "uuencode": "0.0.3",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
     "zepto": "github:madrobby/zepto#v1.1.6"
