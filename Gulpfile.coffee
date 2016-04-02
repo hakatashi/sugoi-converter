@@ -13,7 +13,6 @@ cleanCss = require 'gulp-clean-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
-through = require 'through2'
 
 TYPEFILES = [
 	'typings/main.d.ts'
