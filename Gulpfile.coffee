@@ -13,6 +13,7 @@ cleanCss = require 'gulp-clean-css'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
+through = require 'through2'
 
 TYPEFILES = [
 	'typings/main.d.ts'
@@ -85,7 +86,7 @@ gulp.task 'watch', ->
 	gulp.watch '*.jade', ['build:html']
 	return
 
-gulp.task 'mochify:phantom', ->
+gulp.task 'mochify:phantom', (done) ->
 	mochify './test/index.js',
 		reporter: 'spec'
 		extension: ['.ts', '.coffee']
@@ -94,9 +95,11 @@ gulp.task 'mochify:phantom', ->
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
+	.on 'error', (error) -> done error
+	.on 'end', -> done()
 	.bundle()
 
-gulp.task 'mochify:node', ->
+gulp.task 'mochify:node', (done) ->
 	mochify './test/index.js',
 		reporter: 'spec'
 		node: true
@@ -106,9 +109,11 @@ gulp.task 'mochify:node', ->
 	.plugin tsify,
 		target: 'ES5'
 		noImplicitAny: true
+	.on 'error', (error) -> done error
+	.on 'end', -> done()
 	.bundle()
 
-gulp.task 'mochify:cover', ->
+gulp.task 'mochify:cover', (done) ->
 	mochify './test/index.js',
 		node: true
 		extension: ['.ts', '.coffee']
@@ -120,6 +125,8 @@ gulp.task 'mochify:cover', ->
 	.plugin istanbul,
 		report: ['text', 'text-summary', 'lcov']
 		dir: './coverage'
+	.on 'error', (error) -> done error
+	.on 'end', -> done()
 	.bundle()
 
 gulp.task 'build', ['build:html', 'build:js', 'build:css']
