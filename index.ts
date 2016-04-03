@@ -66,7 +66,7 @@ $(document).ready(() => {
 					try {
 						raw = engines[id].decode(text);
 					} catch (error) {
-						$form.siblings('.error').text('Decode Error: ' + error.message).show();
+						$form.siblings('.error').text(`Decode Error: ${error.message}`).show();
 						return;
 					}
 
@@ -78,7 +78,7 @@ $(document).ready(() => {
 						try {
 							encoded = engines[targetId].encode(raw);
 						} catch (error) {
-							$forms[targetId].siblings('.error').text('Encode Error: ' + error.message).show();
+							$forms[targetId].siblings('.error').text(`Encode Error: ${error.message}`).show();
 							return;
 						}
 
