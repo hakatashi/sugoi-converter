@@ -41,7 +41,7 @@
     "mochify-istanbul": "~2.3.0",
     "purecss": "~0.6.0",
     "sclipting-escape": "~1.1.2",
-    "tsify": "~0.14.0",
+    "tsify": "~0.14.8",
     "typings": "^0.7.8",
     "uuencode": "~0.0.4",
     "vinyl-buffer": "~1.0.0",
