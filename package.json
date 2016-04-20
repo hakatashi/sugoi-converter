@@ -42,7 +42,7 @@
     "purecss": "~0.6.0",
     "sclipting-escape": "~1.1.2",
     "tsify": "~0.14.0",
-    "typings": "^0.7.8",
+    "typings": "^0.8.1",
     "uuencode": "~0.0.4",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
