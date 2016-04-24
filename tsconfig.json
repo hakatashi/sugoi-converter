@@ -19,42 +19,7 @@
         "**/*.tsx",
         "!node_modules/**"
     ],
-    "files": [
-        "index.ts",
-        "lib.d.ts",
-        "src/ascii85.ts",
-        "src/base64.ts",
-        "src/binary.ts",
-        "src/hex.ts",
-        "src/htmlescape.ts",
-        "src/jsescape.ts",
-        "src/md5.ts",
-        "src/punycode.ts",
-        "src/rot13.ts",
-        "src/rot47.ts",
-        "src/sclipting.ts",
-        "src/sha1.ts",
-        "src/text.ts",
-        "src/unicode.ts",
-        "src/urlescape.ts",
-        "src/util.ts",
-        "src/uuencode.ts",
-        "typings/browser.d.ts",
-        "typings/browser/ambient/assertion-error/index.d.ts",
-        "typings/browser/ambient/chai/index.d.ts",
-        "typings/browser/ambient/es6-shim/index.d.ts",
-        "typings/browser/ambient/mocha/index.d.ts",
-        "typings/browser/ambient/node/index.d.ts",
-        "typings/browser/ambient/zepto/index.d.ts",
-        "typings/main.d.ts",
-        "typings/main/ambient/assertion-error/index.d.ts",
-        "typings/main/ambient/chai/index.d.ts",
-        "typings/main/ambient/es6-shim/index.d.ts",
-        "typings/main/ambient/mocha/index.d.ts",
-        "typings/main/ambient/node/index.d.ts",
-        "typings/main/ambient/zepto/index.d.ts"
-    ],
     "atom": {
-        "rewriteTsconfig": true
+        "rewriteTsconfig": false
     }
 }
