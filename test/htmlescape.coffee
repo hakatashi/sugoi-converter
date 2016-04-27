@@ -8,7 +8,7 @@ expect = chai.expect
 describe 'htmlescape', ->
 	describe 'htmlescape.encode', ->
 		it 'basically works', ->
-			expect htmlescape.encode new Buffer '<script>©2016 博多市</script>'
+			expect htmlescape.encode Buffer.from '<script>©2016 博多市</script>'
 			.to.be.a 'string'
 			.and.equal '&lt;script&gt;&copy;2016&nbsp;&#21338;&#22810;&#24066;&lt;/script&gt;'
 

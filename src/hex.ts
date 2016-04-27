@@ -3,5 +3,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return new Buffer(text.replace(/\s/g, ''), 'hex');
+	return Buffer.from(text.replace(/\s/g, ''), 'hex');
 };

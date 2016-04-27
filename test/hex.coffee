@@ -8,7 +8,7 @@ expect = chai.expect
 describe 'hex', ->
 	describe 'hex.encode', ->
 		it 'basically works', ->
-			expect hex.encode new Buffer [0xDE, 0xAD, 0xBE, 0xEF]
+			expect hex.encode Buffer.from [0xDE, 0xAD, 0xBE, 0xEF]
 			.to.be.a 'string'
 			.and.equal 'DEADBEEF'
 
