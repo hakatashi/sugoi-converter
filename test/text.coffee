@@ -24,7 +24,7 @@ describe 'text', ->
 	describe 'text.encode', ->
 		it 'basically works', ->
 			for example in EXAMPLES
-				expect text.encode new Buffer example.plain, 'hex'
+				expect text.encode Buffer.from example.plain, 'hex'
 				.to.be.a 'string'
 				.and.equal example.encoded
 
@@ -32,4 +32,4 @@ describe 'text', ->
 		it 'basically works', ->
 			for example in EXAMPLES
 				expect text.decode example.encoded
-				.to.satisfy equalityWith new Buffer example.plain, 'hex'
+				.to.satisfy equalityWith Buffer.from example.plain, 'hex'

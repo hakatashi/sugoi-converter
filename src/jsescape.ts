@@ -137,5 +137,5 @@ export const decode = (text:string):Buffer => {
 		throw new SyntaxError('Unexpected token ILLEGAL');
 	}
 
-	return new Buffer(decoded, 'utf8');
+	return Buffer.from(decoded, 'utf8');
 };

@@ -4,7 +4,7 @@ expect = chai.expect
 
 ###*
  * Return function that test equality with given buffer to byteArray.
- * Use like expect(new Buffer([42, 42])).to.satisfy(equalityWith([42, 42]))
+ * Use like expect(Buffer.from([42, 42])).to.satisfy(equalityWith([42, 42]))
  * @param  {number[]} byteArray
  * @return {function}
 ###
@@ -21,7 +21,7 @@ exports.equalityWith = (data) ->
 			.to.be.equal data.toString 'hex'
 		else if typeof data is 'string'
 			expect buffer.toString 'hex'
-			.to.be.equal new Buffer(data).toString 'hex'
+			.to.be.equal Buffer.from(data).toString 'hex'
 		else
 			return false
 

@@ -8,25 +8,25 @@ expect = chai.expect
 describe 'punycode', ->
 	describe 'punycode.encode', ->
 		it 'basically works', ->
-			expect punycode.encode new Buffer 'punycode', 'ascii'
+			expect punycode.encode Buffer.from 'punycode', 'ascii'
 			.to.be.a 'string'
 			.and.equal 'punycode-'
 
 			# https://en.wikipedia.org/wiki/Punycode#Encoding_procedure
-			expect punycode.encode new Buffer 'bücher', 'utf-8'
+			expect punycode.encode Buffer.from 'bücher', 'utf-8'
 			.to.be.a 'string'
 			.and.equal 'bcher-kva'
 
-			expect punycode.encode new Buffer 'büücher', 'utf-8'
+			expect punycode.encode Buffer.from 'büücher', 'utf-8'
 			.to.be.a 'string'
 			.and.equal 'bcher-kvaa'
 
-			expect punycode.encode new Buffer 'übücher', 'utf-8'
+			expect punycode.encode Buffer.from 'übücher', 'utf-8'
 			.to.be.a 'string'
 			.and.equal 'bcher-jvab'
 
 			# https://ja.wikipedia.org/wiki/Punycode#.E6.A6.82.E8.A6.81
-			expect punycode.encode new Buffer 'ドメイン名例', 'utf-8'
+			expect punycode.encode Buffer.from 'ドメイン名例', 'utf-8'
 			.to.be.a 'string'
 			.and.equal 'eckwd4c7cu47r2wf'
 

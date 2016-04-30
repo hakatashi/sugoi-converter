@@ -25,13 +25,13 @@ EXAMPLE_ASCII85 = '''
 describe 'ascii85', ->
 	describe 'ascii85.encode', ->
 		it 'basically works', ->
-			expect ascii85.encode new Buffer EXAMPLE_PLAIN, 'ascii'
+			expect ascii85.encode Buffer.from EXAMPLE_PLAIN, 'ascii'
 			.to.be.a 'string'
 			.and.equal EXAMPLE_ASCII85.replace /\n/g, ''
 
 		it 'supports zero compression', ->
 			# https://en.wikipedia.org/wiki/Ascii85#Basic_idea
-			expect ascii85.encode new Buffer [0, 0, 0, 0]
+			expect ascii85.encode Buffer.from [0, 0, 0, 0]
 			.to.be.a 'string'
 			.and.equal '<~z~>'
 
