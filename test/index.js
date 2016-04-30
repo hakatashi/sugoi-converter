@@ -6,6 +6,7 @@ require('./rot13');
 require('./binary');
 require('./base64');
 require('./ascii85');
+require('./unicode');
 require('./punycode');
 require('./jsescape');
 require('./uuencode');
