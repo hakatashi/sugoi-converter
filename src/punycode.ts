@@ -5,5 +5,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return new Buffer(punycode.decode(text), 'utf-8');
+	return Buffer.from(punycode.decode(text), 'utf-8');
 };
