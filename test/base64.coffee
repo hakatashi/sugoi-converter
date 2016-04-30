@@ -25,11 +25,11 @@ EXAMPLE_BASE64 = '
 describe 'base64', ->
 	describe 'base64.encode', ->
 		it 'basically works', ->
-			expect base64.encode Buffer.from 'Man', 'ascii'
+			expect base64.encode new Buffer 'Man', 'ascii'
 			.to.be.a 'string'
 			.and.equal 'TWFu'
 
-			expect base64.encode Buffer.from EXAMPLE_PLAIN, 'ascii'
+			expect base64.encode new Buffer EXAMPLE_PLAIN, 'ascii'
 			.to.be.a 'string'
 			.and.equal EXAMPLE_BASE64
 

@@ -7,5 +7,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return Buffer.from(encoder.decode(text), 'binary');
+	return new Buffer(encoder.decode(text), 'binary');
 };

@@ -3,5 +3,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return Buffer.from(text, 'base64');
+	return new Buffer(text, 'base64');
 };

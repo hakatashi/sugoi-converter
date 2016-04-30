@@ -16,5 +16,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return Buffer.from(rot47(text), 'utf-8');
+	return new Buffer(rot47(text), 'utf-8');
 };

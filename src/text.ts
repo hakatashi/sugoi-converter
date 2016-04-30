@@ -3,5 +3,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return Buffer.from(text, 'utf8');
+	return new Buffer(text, 'utf8');
 };

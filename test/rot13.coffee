@@ -19,12 +19,12 @@ WIKIPEDIA_ENCODED = """
 describe 'rot13', ->
 	describe 'rot13.encode', ->
 		it 'basically works', ->
-			expect rot13.encode Buffer.from WIKIPEDIA_PLAIN
+			expect rot13.encode new Buffer WIKIPEDIA_PLAIN
 			.to.be.a 'string'
 			.and.equal WIKIPEDIA_ENCODED
 
 		it 'keeps characters which isnt alphabet untouched', ->
-			expect rot13.encode Buffer.from '!"#$%&(=~|abc'
+			expect rot13.encode new Buffer '!"#$%&(=~|abc'
 			.to.be.a 'string'
 			.and.equal '!"#$%&(=~|nop'
 

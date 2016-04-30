@@ -29,5 +29,5 @@ export const decode = (text:string) => {
 		bytes.push(byte);
 	}
 
-	return Buffer.from(bytes);
+	return new Buffer(bytes);
 };
