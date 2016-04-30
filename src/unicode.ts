@@ -37,7 +37,7 @@ export const decode = (text:string) => {
 
 		const codePoint = parseInt(codeString, 16);
 
-		if (Number.isNaN(codePoint)) {
+		if (isNaN(codePoint)) {
 			throw new Error(`Invalid code point: ${codeString}`);
 		}
 
