@@ -118,5 +118,13 @@ $(document).ready(() => {
 		}
 	})();
 
-	$forms[field].text(text).change();
+	const $form = (() => {
+		if (typeof $forms[field] === 'object') {
+			return $forms[field];
+		} else {
+			return $forms['text'];
+		}
+	})()
+
+	$form.text(text).change();
 });
