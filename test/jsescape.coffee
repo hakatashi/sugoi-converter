@@ -28,6 +28,10 @@ describe 'jsescape', ->
 			expect jsescape.decode '\\Q\\y\\o\\あ\\亜'
 			.to.satisfy equalityWith 'Qyoあ亜'
 
+		it 'recognize LineContinuation sequence', ->
+			expect jsescape.decode 'bbb\\\nbbb'
+			.to.satisfy equalityWith 'bbb\nbbb'
+
 		it 'throws error when invalid escape sequence is supplied', ->
 			expect -> jsescape.decode '\\xZZ'
 			.to.throw SyntaxError
@@ -48,4 +52,7 @@ describe 'jsescape', ->
 			.to.throw SyntaxError
 
 			expect -> jsescape.decode '\\u{EECA008}'
+			.to.throw SyntaxError
+
+			expect -> jsescape.decode 'bbb\\\\\nbbb'
 			.to.throw SyntaxError
