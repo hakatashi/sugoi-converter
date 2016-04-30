@@ -92,10 +92,39 @@ $(document).ready(() => {
 		})(id);
 	}
 
-	const params = qs.parse(window.location.search.substr(1));
+	const params = qs.parse<{[key:string]:string|string[]}>(window.location.search.substr(1));
 
-	const text = params['text'] || 'Let\'s say “Sugoi™!!!!”';
-	const field = params['field'] || 'text';
+	const text = (() => {
+		const textParam = params['text'];
 
-	$forms[field].text(text).change();
+		if (typeof textParam === 'string') {
+			return textParam;
+		} else if (typeof textParam === 'object') {
+			return textParam[0];
+		} else {
+			return 'Let\'s say “Sugoi™!!!!”';
+		}
+	})();
+
+	const field = (() => {
+		const fieldParam = params['field'];
+
+		if (typeof fieldParam === 'string') {
+			return fieldParam;
+		} else if (typeof fieldParam === 'object') {
+			return fieldParam[0];
+		} else {
+			return 'text';
+		}
+	})();
+
+	const $form = (() => {
+		if (typeof $forms[field] === 'object') {
+			return $forms[field];
+		} else {
+			return $forms['text'];
+		}
+	})()
+
+	$form.text(text).change();
 });
