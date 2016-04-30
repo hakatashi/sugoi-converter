@@ -1,5 +1,7 @@
 require('core-js/fn/object/create');
 
+import qs = require('querystring');
+
 import hex = require('./src/hex');
 import md5 = require('./src/md5');
 import text = require('./src/text');
@@ -90,5 +92,10 @@ $(document).ready(() => {
 		})(id);
 	}
 
-	$forms['text'].text('Let\'s say “Sugoi™!!!!”').change();
+	const params = qs.parse(window.location.search.substr(1));
+
+	const text = params['text'] || 'Let\'s say “Sugoi™!!!!”';
+	const field = params['field'] || 'text';
+
+	$forms[field].text(text).change();
 });
