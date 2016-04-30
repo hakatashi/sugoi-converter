@@ -9,5 +9,6 @@ require('./ascii85');
 require('./punycode');
 require('./jsescape');
 require('./uuencode');
+require('./urlescape');
 require('./sclipting');
 require('./htmlescape');
