@@ -92,7 +92,7 @@ $(document).ready(() => {
 		})(id);
 	}
 
-	const params = qs.parse(window.location.search.substr(1));
+	const params = qs.parse<{[key:string]:string|string[]}>(window.location.search.substr(1));
 
 	const text = params['text'] || 'Let\'s say “Sugoi™!!!!”';
 	const field = params['field'] || 'text';
