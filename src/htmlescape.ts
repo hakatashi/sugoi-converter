@@ -7,5 +7,5 @@ export const encode = (data:Buffer) => {
 };
 
 export const decode = (text:string) => {
-	return Buffer.from(entities.decode(text), 'utf-8');
+	return new Buffer(entities.decode(text), 'utf-8');
 };

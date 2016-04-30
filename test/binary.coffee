@@ -8,7 +8,7 @@ expect = chai.expect
 describe 'binary', ->
 	describe 'binary.encode', ->
 		it 'basically works', ->
-			expect binary.encode Buffer.from [0b11001010, 0b00110101]
+			expect binary.encode new Buffer [0b11001010, 0b00110101]
 			.to.be.a 'string'
 			.and.equal '1100101000110101'
 
