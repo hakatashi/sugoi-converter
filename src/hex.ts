@@ -7,5 +7,5 @@ export const decode = (text:string) => {
 		throw new Error('Invalid hex string');
 	}
 
-	return new Buffer(text.replace(/\s/g, ''), 'hex');
+	return Buffer.from(text.replace(/\s/g, ''), 'hex');
 };
