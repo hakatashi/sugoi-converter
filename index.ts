@@ -4,8 +4,10 @@ import qs = require('querystring');
 
 import hex = require('./src/hex');
 import md5 = require('./src/md5');
+import nfc = require('./src/nfc');
 import text = require('./src/text');
 import sha1 = require('./src/sha1');
+import nfkc = require('./src/nfkc');
 import rot13 = require('./src/rot13');
 import rot47 = require('./src/rot47');
 import base64 = require('./src/base64');
@@ -32,8 +34,10 @@ const engines:{[id:string]:Engine} = Object.create(null);
 
 engines['hex'] = hex;
 engines['md5'] = md5;
+engines['nfc'] = nfc;
 engines['text'] = text;
 engines['sha1'] = sha1;
+engines['nfkc'] = nfkc;
 engines['rot13'] = rot13;
 engines['rot47'] = rot47;
 engines['base64'] = base64;
