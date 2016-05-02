@@ -8,7 +8,7 @@ expect = chai.expect
 describe 'unicode', ->
 	describe 'unicode.encode', ->
 		it 'basically works', ->
-			expect unicode.encode new Buffer '1②𝟛'
+			expect unicode.encode Buffer.from '1②𝟛'
 			.to.be.a 'string'
 			.and.equal 'U+0031 U+2461 U+1D7DB'
 
