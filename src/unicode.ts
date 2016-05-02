@@ -46,5 +46,5 @@ export const decode = (text:string) => {
 
 	const unicodes = punycode.ucs2.encode(codePoints);
 
-	return new Buffer(unicodes, 'utf-8');
+	return Buffer.from(unicodes, 'utf-8');
 };

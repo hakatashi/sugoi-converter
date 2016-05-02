@@ -6,7 +6,7 @@
     "chai": "github:hakatashi/DefinitelyTyped/chai/chai.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
     "es6-shim": "github:hakatashi/DefinitelyTyped/es6-shim/es6-shim.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
     "mocha": "github:hakatashi/DefinitelyTyped/mocha/mocha.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
-    "node": "registry:env/node#4.0.0+20160410231109",
+    "node": "github:hakatashi/DefinitelyTyped/node/node.d.ts#e05e1f6f83c6ac84e9d7ff8284e8089d53a788a6",
     "zepto": "github:hakatashi/DefinitelyTyped/zepto/zepto.d.ts#1eec866b5005d057daf9bbc27f47c2796e902bc1"
   }
 }
