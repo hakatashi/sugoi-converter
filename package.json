@@ -37,7 +37,7 @@
     "gulp-uglify": "~1.4.2",
     "html-entities": "^1.2.0",
     "mocha": "^2.4.5",
-    "mochify": "~2.14.0",
+    "mochify": "~2.17.0",
     "mochify-istanbul": "~2.3.0",
     "purecss": "~0.6.0",
     "sclipting-escape": "~1.1.2",
