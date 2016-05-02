@@ -43,6 +43,7 @@
     "sclipting-escape": "~1.1.2",
     "tsify": "~0.15.1",
     "typings": "^0.8.1",
+    "unorm": "^1.4.1",
     "uuencode": "~0.0.4",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
