@@ -53,6 +53,10 @@ This project uses various new technologies for my JavaScript study. Here is the 
     - [Chai](http://chaijs.com/)
 * [Istanbul](https://github.com/gotwarlost/istanbul)
 
+### Maintenance
+
+* [Greenkeeper](https://greenkeeper.io/)
+
 ## Bug Hunt
 
 These bugs were found along the development of this repository.
