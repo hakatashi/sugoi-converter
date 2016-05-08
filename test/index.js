@@ -15,3 +15,4 @@ require('./uuencode');
 require('./urlescape');
 require('./sclipting');
 require('./htmlescape');
+require('./quotedprintable');
