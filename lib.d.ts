@@ -45,6 +45,11 @@ declare module "html-entities" {
 	export class AllHtmlEntities extends Entities {}
 }
 
+declare module "quoted-printable" {
+	export function encode(input: string): string;
+	export function decode(text: string): string;
+}
+
 declare module "uuencode" {
 	export function encode(data: string | Buffer): string;
 	export function decode(text: string | Buffer): Buffer;
