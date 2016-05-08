@@ -20,6 +20,7 @@ import uuencode = require('./src/uuencode');
 import urlescape = require('./src/urlescape');
 import sclipting = require('./src/sclipting');
 import htmlescape = require('./src/htmlescape');
+import quotedprintable = require('./src/quotedprintable');
 
 require('zepto');
 require('zepto/event');
@@ -50,6 +51,7 @@ engines['uuencode'] = uuencode;
 engines['urlescape'] = urlescape;
 engines['sclipting'] = sclipting;
 engines['htmlescape'] = htmlescape;
+engines['quotedprintable'] = quotedprintable;
 
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {
