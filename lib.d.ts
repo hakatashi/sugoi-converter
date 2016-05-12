@@ -54,3 +54,40 @@ declare module "uuencode" {
 	export function encode(data: string | Buffer): string;
 	export function decode(text: string | Buffer): Buffer;
 }
+
+declare module "lodash.invert" {
+	function invert(object: {[key: string]: string}): {[key: string]: string};
+	export = invert;
+}
+
+declare module "regenerate" {
+	type RegenerateValue = number | string;
+
+	interface Regenerate {
+		add(values: RegenerateValue[]): Regenerate;
+		add(...values: RegenerateValue[]): Regenerate;
+		remove(values: RegenerateValue[]): Regenerate;
+		remove(...values: RegenerateValue[]): Regenerate;
+		addRange(start: RegenerateValue, end: RegenerateValue): Regenerate;
+		removeRange(start: RegenerateValue, end: RegenerateValue): Regenerate;
+		intersection(codepoints: RegenerateValue[] | Regenerate): Regenerate;
+		contains(value: RegenerateValue): boolean;
+		clone(): Regenerate;
+		toString(options?: {bmpOnly?: boolean}): string;
+		toRegExp(flags?: string): RegExp;
+		valueOf(): number[];
+		toArray(): number[];
+	}
+
+	function regenerate(...values: RegenerateValue[]): Regenerate;
+
+	export = regenerate;
+}
+
+declare module "node-emoji" {
+	export var emoji: {[name: string]: string};
+	export function _get(emoji: string): string;
+	export function get(emoji: string): string;
+	export function which(emoji_code: string): string;
+	export function emojify(str: string): string;
+}
