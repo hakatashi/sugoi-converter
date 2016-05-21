@@ -4,9 +4,12 @@
 [travis-url]: https://travis-ci.org/hakatashi/sugoi-converter
 [coveralls-image]: https://coveralls.io/repos/hakatashi/sugoi-converter/badge.svg?branch=master&service=github
 [coveralls-url]: https://coveralls.io/github/hakatashi/sugoi-converter?branch=master
+[gemnasium-image]: https://gemnasium.com/badges/github.com/hakatashi/sugoi-converter.svg
+[gemnasium-url]: https://gemnasium.com/github.com/hakatashi/sugoi-converter
 
 [![Travis Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 [link]: https://hakatashi.github.io/sugoi-converter/
 [build-history]: https://docs.google.com/spreadsheets/d/1pqdn8BEOKRdc3cx6eYxOdZr5LNwGGINAVg0anHLUBZQ/edit?usp=sharing
