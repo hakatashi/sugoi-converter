@@ -1,7 +1,7 @@
 {
   "name": "sugoi-converter",
   "version": false,
-  "ambientDependencies": {
+  "globalDependencies": {
     "assertion-error": "github:hakatashi/DefinitelyTyped/assertion-error/assertion-error.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
     "chai": "github:hakatashi/DefinitelyTyped/chai/chai.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
     "es6-shim": "github:hakatashi/DefinitelyTyped/es6-shim/es6-shim.d.ts#efd40e67ff323f7147651bdbef03c03ead7b1675",
