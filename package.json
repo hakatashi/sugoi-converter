@@ -45,7 +45,7 @@
     "quoted-printable": "^1.0.0",
     "regenerate": "~1.2.1",
     "sclipting-escape": "~1.1.2",
-    "tsify": "~0.15.5",
+    "tsify": "0.14.8",
     "typings": "^0.8.1",
     "unorm": "^1.4.1",
     "uuencode": "~0.0.4",
