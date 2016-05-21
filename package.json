@@ -46,7 +46,7 @@
     "regenerate": "~1.2.1",
     "sclipting-escape": "~1.1.2",
     "tsify": "0.14.8",
-    "typings": "^0.8.1",
+    "typings": "^1.0.1",
     "unorm": "^1.4.1",
     "uuencode": "~0.0.4",
     "vinyl-buffer": "~1.0.0",
