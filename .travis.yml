@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - '5'
   - 'node'
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 install: npm install
 before_script:
   - chmod a+x bin/*
