@@ -128,9 +128,9 @@ gulp.task 'mochify:cover', (done) ->
 	.on 'end', -> done()
 	.bundle()
 
-gulp.task 'build', ['build:html', 'build:js', 'build:css']
-gulp.task 'release', ['build:html:release', 'build:js:release', 'build:css:release']
-gulp.task 'serve', ['connect', 'watch']
-gulp.task 'test', ['mochify:node', 'mochify:phantom']
+gulp.task 'build', gulp.parallel 'build:html', 'build:js', 'build:css'
+gulp.task 'release', gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'
+gulp.task 'serve', gulp.parallel 'connect', 'watch'
+gulp.task 'test', gulp.parallel 'mochify:node', 'mochify:phantom'
 
-gulp.task 'default', ['test']
+gulp.task 'default', gulp.task 'test'
