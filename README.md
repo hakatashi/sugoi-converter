@@ -45,7 +45,7 @@ This project uses various new technologies for my JavaScript study. Here is the 
 
 ### Static assets
 
-* [Jade](http://jade-lang.com/)
+* ~~[Jade](http://jade-lang.com/)~~ → Renamed to Pug
 * [LESS](http://less-ja.studiomohawk.com/)
     - [Pure.css](http://purecss.io/)
 

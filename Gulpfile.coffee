@@ -4,7 +4,7 @@ tsify = require 'tsify'
 mochify = require 'mochify'
 coffeeify = require 'coffeeify'
 browserify = require 'browserify'
-jade = require 'gulp-jade'
+pug = require 'gulp-pug'
 less = require 'gulp-less'
 rename = require 'gulp-rename'
 uglify = require 'gulp-uglify'
@@ -22,8 +22,8 @@ TYPEFILES = [
 buildHtml = (locals) ->
 	locals.pkg = pkg
 
-	gulp.src '*.jade'
-	.pipe jade locals: locals
+	gulp.src '*.pug'
+	.pipe pug locals: locals
 	.pipe rename (file) -> file.extname = '.html'
 	.pipe gulp.dest '.'
 
@@ -82,7 +82,7 @@ gulp.task 'connect', ->
 gulp.task 'watch', ->
 	gulp.watch ['*.ts', 'src/*.ts'], ['build:js']
 	gulp.watch '*.less', ['build:css']
-	gulp.watch '*.jade', ['build:html']
+	gulp.watch '*.pug', ['build:html']
 	return
 
 gulp.task 'mochify:phantom', (done) ->
