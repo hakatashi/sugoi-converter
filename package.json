@@ -1,6 +1,6 @@
 {
   "name": "sugoi-converter",
-  "version": "1.8.28",
+  "version": "1.8.29",
   "private": true,
   "description": "",
   "main": "index.js",
