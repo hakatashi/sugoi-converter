@@ -27,7 +27,7 @@
     "coffee-script": "~1.10.0",
     "coffeeify": "~2.0.1",
     "core-js": "~2.4.0",
-    "coveralls": "~2.11.4",
+    "coveralls": "~2.11.15",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-clean-css": "~2.0.3",
     "gulp-connect": "~5.0.0",
