@@ -32,7 +32,7 @@
     "gulp-clean-css": "~2.0.3",
     "gulp-connect": "~5.0.0",
     "gulp-less": "~3.1.0",
-    "gulp-pug": "~3.0.2",
+    "gulp-pug": "~3.2.0",
     "gulp-rename": "~1.2.2",
     "gulp-uglify": "~2.0.0",
     "html-entities": "~1.2.0",
