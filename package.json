@@ -25,7 +25,7 @@
     "browserify-shim": "~3.8.11",
     "chai": "~3.5.0",
     "coffee-script": "~1.10.0",
-    "coffeeify": "~2.0.1",
+    "coffeeify": "~2.1.0",
     "core-js": "~2.4.0",
     "coveralls": "~2.11.4",
     "gulp": "gulpjs/gulp#4.0",
