@@ -29,7 +29,7 @@
     "core-js": "~2.4.0",
     "coveralls": "~2.11.4",
     "gulp": "gulpjs/gulp#4.0",
-    "gulp-clean-css": "~2.0.3",
+    "gulp-clean-css": "~2.3.2",
     "gulp-connect": "~5.0.0",
     "gulp-less": "~3.1.0",
     "gulp-pug": "~3.0.2",
