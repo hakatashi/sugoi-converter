@@ -39,7 +39,7 @@
     "mocha": "~3.0.0",
     "mochify": "~2.18.0",
     "mochify-istanbul": "~2.4.1",
-    "purecss": "~0.6.0",
+    "purecss": "~0.6.2",
     "quoted-printable": "~1.0.0",
     "sclipting-escape": "~1.1.2",
     "tsify": "1.0.7",
