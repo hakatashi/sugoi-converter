@@ -15,7 +15,6 @@ buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
 
 TYPEFILES = [
-	'typings/index.d.ts'
 	'lib.d.ts'
 ]
 
