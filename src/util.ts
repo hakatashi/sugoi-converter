@@ -1,7 +1,3 @@
-require('core-js/fn/string/code-point-at');
-require('core-js/fn/string/from-code-point');
-require('core-js/fn/string/repeat');
-
 // Be cool. Be Pythonic.
 
 export function ord (char:string) {

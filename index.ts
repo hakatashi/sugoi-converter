@@ -1,7 +1,5 @@
 require('./analytics');
 
-require('core-js/fn/object/create');
-
 import qs = require('querystring');
 
 import hex = require('./src/hex');
