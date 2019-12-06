@@ -1,5 +1,7 @@
 # Sugoi Converter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hakatashi/sugoi-converter.svg)](https://greenkeeper.io/)
+
 [travis-image]: https://travis-ci.org/hakatashi/sugoi-converter.svg?branch=master
 [travis-url]: https://travis-ci.org/hakatashi/sugoi-converter
 [coveralls-image]: https://coveralls.io/repos/hakatashi/sugoi-converter/badge.svg?branch=master&service=github
