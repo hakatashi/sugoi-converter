@@ -52,7 +52,7 @@ gulp.task 'build:js', ->
 
 gulp.task 'build:js:release', ->
 	buildJs()
-	.pipe uglify preserveComments: 'license'
+	.pipe uglify()
 	.pipe rename (file) -> file.extname = '.min.js'
 	.pipe gulp.dest '.'
 
