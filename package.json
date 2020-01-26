@@ -41,7 +41,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2",
     "html-entities": "^1.2.1",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.1",
     "mochify": "^6.6.0",
     "mochify-istanbul": "^2.4.2",
     "purecss": "^1.0.1",
