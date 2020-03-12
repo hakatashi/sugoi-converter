@@ -15,7 +15,6 @@ buffer = require 'vinyl-buffer'
 istanbul = require 'mochify-istanbul'
 
 TYPEFILES = [
-	'typings/index.d.ts'
 	'lib.d.ts'
 ]
 
@@ -53,7 +52,7 @@ gulp.task 'build:js', ->
 
 gulp.task 'build:js:release', ->
 	buildJs()
-	.pipe uglify preserveComments: 'license'
+	.pipe uglify()
 	.pipe rename (file) -> file.extname = '.min.js'
 	.pipe gulp.dest '.'
 

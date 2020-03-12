@@ -1,7 +1,5 @@
 require('./analytics');
 
-require('core-js/fn/object/create');
-
 import qs = require('querystring');
 
 import hex = require('./src/hex');
@@ -58,6 +56,7 @@ engines['quotedprintable'] = quotedprintable;
 $(document).ready(() => {
 	$('.textarea').each((index, element) => {
 		$forms[$(element).data('converter')] = $(element);
+		return true;
 	});
 
 	for (var id in $forms) {
@@ -100,7 +99,7 @@ $(document).ready(() => {
 		})(id);
 	}
 
-	const params = qs.parse<{[key:string]:string|string[]}>(window.location.search.substr(1));
+	const params = qs.parse(window.location.search.substr(1));
 
 	const text = (() => {
 		const textParam = params['text'];

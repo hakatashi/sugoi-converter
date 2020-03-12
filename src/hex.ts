@@ -7,5 +7,11 @@ export const decode = (text:string) => {
 		throw new Error('Invalid hex string');
 	}
 
-	return Buffer.from(text.replace(/\s/g, ''), 'hex');
+	const normalized = text.replace(/\s/g, '');
+
+	if (normalized.length % 2 !== 0) {
+		throw new Error('Input is not aligned into bytes')
+	}
+
+	return Buffer.from(normalized, 'hex');
 };

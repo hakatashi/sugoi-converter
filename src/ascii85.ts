@@ -3,7 +3,7 @@ import ascii85 = require('ascii85');
 const encoder = ascii85.PostScript;
 
 export const encode = (data:Buffer) => {
-	return encoder.encode(data);
+	return encoder.encode(data).toString();
 };
 
 export const decode = (text:string) => {
