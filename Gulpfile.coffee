@@ -24,7 +24,7 @@ buildHtml = (locals) ->
 	gulp.src '*.pug'
 	.pipe pug locals: locals
 	.pipe rename (file) -> file.extname = '.html'
-	.pipe gulp.dest '.'
+	.pipe gulp.dest 'dist'
 
 gulp.task 'build:html', ->
 	buildHtml debug: true
@@ -47,20 +47,20 @@ buildJs = ->
 
 gulp.task 'build:js', ->
 	buildJs()
-	.pipe gulp.dest '.'
+	.pipe gulp.dest 'dist'
 	.pipe connect.reload()
 
 gulp.task 'build:js:release', ->
 	buildJs()
 	.pipe uglify()
 	.pipe rename (file) -> file.extname = '.min.js'
-	.pipe gulp.dest '.'
+	.pipe gulp.dest 'dist'
 
 buildCss = ->
 	gulp.src 'index.less'
 	.pipe less()
 	.pipe rename (file) -> file.extname = '.css'
-	.pipe gulp.dest '.'
+	.pipe gulp.dest 'dist'
 
 gulp.task 'build:css', ->
 	buildCss()
@@ -70,18 +70,18 @@ gulp.task 'build:css:release', ->
 	buildCss()
 	.pipe cleanCss()
 	.pipe rename (file) -> file.extname = '.min.css'
-	.pipe gulp.dest '.'
+	.pipe gulp.dest 'dist'
 
 gulp.task 'connect', ->
 	connect.server
-		root: '.'
+		root: 'dist'
 		livereload: true
 		port: 35158
 
 gulp.task 'watch', ->
-	gulp.watch ['*.ts', 'src/*.ts'], ['build:js']
-	gulp.watch '*.less', ['build:css']
-	gulp.watch '*.pug', ['build:html']
+	gulp.watch ['*.ts', 'src/*.ts'], -> gulp.start 'build:js'
+	gulp.watch '*.less', -> gulp.start 'build:css'
+	gulp.watch '*.pug', -> gulp.start 'build:html'
 	return
 
 gulp.task 'mochify:phantom', (done) ->
@@ -127,8 +127,12 @@ gulp.task 'mochify:cover', (done) ->
 	.on 'end', -> done()
 	.bundle()
 
+gulp.task 'analytics', ->
+	gulp.src './analytics.js'
+	.pipe gulp.dest './dist'
+
 gulp.task 'build', gulp.parallel 'build:html', 'build:js', 'build:css'
-gulp.task 'release', gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'
+gulp.task 'release', gulp.series [gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'], 'analytics'
 gulp.task 'serve', gulp.parallel 'connect', 'watch'
 gulp.task 'test', gulp.parallel 'mochify:node'
 
