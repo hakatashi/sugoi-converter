@@ -127,12 +127,12 @@ gulp.task 'mochify:cover', (done) ->
 	.on 'end', -> done()
 	.bundle()
 
-gulp.task 'analytics', ->
-	gulp.src './analytics.js'
+gulp.task 'static', ->
+	gulp.src ['./analytics.js', './CNAME']
 	.pipe gulp.dest './dist'
 
 gulp.task 'build', gulp.parallel 'build:html', 'build:js', 'build:css'
-gulp.task 'release', gulp.series [gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'], 'analytics'
+gulp.task 'release', gulp.series [gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'], 'static'
 gulp.task 'serve', gulp.parallel 'connect', 'watch'
 gulp.task 'test', gulp.parallel 'mochify:node'
 

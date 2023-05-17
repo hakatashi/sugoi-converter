@@ -31,9 +31,7 @@ node_modules
 typings
 
 # Built files
-*.html
-*.js
-*.css
+dist
 
 # Test registry is just a JavaScript, indeed
 !test/index.js
