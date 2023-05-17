@@ -5,8 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gulp build && gulp test",
-    "version": "gulp release && git add index.html index.min.css index.min.js"
+    "test": "gulp build && gulp test"
   },
   "repository": {
     "type": "git",
