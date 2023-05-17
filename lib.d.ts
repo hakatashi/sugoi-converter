@@ -91,3 +91,8 @@ declare module "node-emoji" {
 	export function which(emoji_code: string): string;
 	export function emojify(str: string): string;
 }
+
+declare module "idna-uts46" {
+	export function toAscii(domain: string, options?: {transitional?: boolean, useStd3ASCII?: boolaen, verifyDnsLength?: boolean}): string;
+	export function toUnicode(domain: string, options?: {useStd3ASCII?: boolean}): string;
+}

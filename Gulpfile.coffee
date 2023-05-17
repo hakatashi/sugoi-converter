@@ -79,9 +79,9 @@ gulp.task 'connect', ->
 		port: 35158
 
 gulp.task 'watch', ->
-	gulp.watch ['*.ts', 'src/*.ts'], -> gulp.start 'build:js'
-	gulp.watch '*.less', -> gulp.start 'build:css'
-	gulp.watch '*.pug', -> gulp.start 'build:html'
+	gulp.watch ['*.ts', 'src/*.ts'], gulp.series 'build:js'
+	gulp.watch '*.less', gulp.series 'build:css'
+	gulp.watch '*.pug', gulp.series 'build:html'
 	return
 
 gulp.task 'mochify:phantom', (done) ->
@@ -133,7 +133,7 @@ gulp.task 'static', ->
 
 gulp.task 'build', gulp.parallel 'build:html', 'build:js', 'build:css'
 gulp.task 'release', gulp.series [gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'], 'static'
-gulp.task 'serve', gulp.parallel 'connect', 'watch'
+gulp.task 'serve', gulp.parallel 'build', 'connect', 'watch'
 gulp.task 'test', gulp.parallel 'mochify:node'
 
 gulp.task 'default', gulp.task 'test'

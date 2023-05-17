@@ -4,6 +4,7 @@ require('./nfc');
 require('./sha1');
 require('./text');
 require('./nfkc');
+require('./idna');
 require('./rot13');
 require('./binary');
 require('./base64');
