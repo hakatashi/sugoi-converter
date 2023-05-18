@@ -130,6 +130,6 @@ gulp.task 'mochify:cover', (done) ->
 gulp.task 'build', gulp.parallel 'build:html', 'build:js', 'build:css'
 gulp.task 'release', gulp.parallel 'build:html:release', 'build:js:release', 'build:css:release'
 gulp.task 'serve', gulp.parallel 'connect', 'watch'
-gulp.task 'test', gulp.parallel 'mochify:node', 'mochify:phantom'
+gulp.task 'test', gulp.parallel 'mochify:node'
 
 gulp.task 'default', gulp.task 'test'

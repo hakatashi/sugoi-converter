@@ -1,12 +1,11 @@
 {
   "name": "sugoi-converter",
-  "version": "1.8.33",
+  "version": "1.8.0",
   "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gulp build && gulp test",
-    "version": "gulp release && git add index.html index.min.css index.min.js"
+    "test": "gulp build && gulp test"
   },
   "repository": {
     "type": "git",
