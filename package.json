@@ -30,7 +30,7 @@
     "browserify-shim": "^3.8.14",
     "chai": "^4.2.0",
     "coffeeify": "^3.0.1",
-    "coffeescript": "^2.5.1",
+    "coffeescript": "^2.7.0",
     "coveralls": "^3.0.9",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
