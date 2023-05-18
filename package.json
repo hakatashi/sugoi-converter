@@ -27,7 +27,7 @@
     "@types/zepto": "^1.0.30",
     "ascii85": "^1.0.2",
     "browserify": "^16.5.0",
-    "browserify-shim": "^3.8.14",
+    "browserify-shim": "^3.8.16",
     "chai": "^4.3.7",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.7.0",
