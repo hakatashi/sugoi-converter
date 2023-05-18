@@ -52,7 +52,7 @@
     "uuencode": "^0.0.4",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "zepto": "github:madrobby/zepto#v1.1.6"
+    "zepto": "github:madrobby/zepto#v1.2.0"
   },
   "coffeelintConfig": {
     "indentation": {
