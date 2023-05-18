@@ -19,7 +19,7 @@
   "homepage": "https://github.com/hakatashi/sugoi-converter#readme",
   "devDependencies": {
     "@types/assertion-error": "^1.1.0",
-    "@types/chai": "^4.2.10",
+    "@types/chai": "^4.3.5",
     "@types/es6-shim": "^0.31.39",
     "@types/mocha": "^7.0.2",
     "@types/node": "^14.0.0",
@@ -28,7 +28,7 @@
     "ascii85": "^1.0.2",
     "browserify": "^16.5.0",
     "browserify-shim": "^3.8.14",
-    "chai": "^4.2.0",
+    "chai": "^4.3.7",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.7.0",
     "coveralls": "^3.0.9",
