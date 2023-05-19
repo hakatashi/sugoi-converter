@@ -42,7 +42,7 @@
     "html-entities": "^1.2.1",
     "idna-uts46": "^1.1.0",
     "mocha": "^7.1.0",
-    "mochify": "^6.6.0",
+    "mochify": "^9.2.0",
     "mochify-istanbul": "^2.4.2",
     "purecss": "^3.0.0",
     "quoted-printable": "^1.0.1",
