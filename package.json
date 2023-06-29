@@ -48,7 +48,7 @@
     "quoted-printable": "^1.0.1",
     "sclipting-escape": "^1.1.3",
     "tsify": "5.0.4",
-    "typescript": "^5.1.3",
+    "typescript": "^5.1.6",
     "unorm": "^1.6.0",
     "uuencode": "^0.0.4",
     "vinyl-buffer": "^1.0.1",
