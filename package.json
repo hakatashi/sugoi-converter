@@ -28,6 +28,7 @@
     "ascii85": "^1.0.2",
     "browserify": "^17.0.0",
     "browserify-shim": "^3.8.16",
+    "bs58": "^5.0.0",
     "chai": "^4.3.7",
     "coffeeify": "^3.0.1",
     "coffeescript": "^2.7.0",

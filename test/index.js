@@ -7,6 +7,7 @@ require('./nfkc');
 require('./idna');
 require('./rot13');
 require('./binary');
+require('./base58');
 require('./base64');
 require('./ascii85');
 require('./unicode');

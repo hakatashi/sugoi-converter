@@ -1,4 +1,4 @@
-import unorm = require('unorm');
+import * as unorm from 'unorm';
 
 export const encode = (data:Buffer) => {
 	return unorm.nfkc(data.toString('utf-8'));
